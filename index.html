@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Effia-Kwesimintsim's Big Plan — Child-Friendly Version</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Effia-Kwesimintsim palette — a sister to the Biakoye, Sunyani and Builsa
+     North posters (same layout and type), moved to the Western Region coast at
+     dusk: royal purple, coral sunset and Atlantic sea blue */
+  --ink:#2A1B33; --ink-2:#56445F; --ink-3:#85748D;
+  --cream:#FBF4EE; --cream-2:#FFFAF6;
+  --haze:#F4E3EA;               /* sunset blush — the alternating band */
+  --skywash:#E3EEF3;            /* sea mist — the ring band */
+  --lagoon:#6B3FA0; --lagoon-deep:#55308A;
+  --coral:#E2574C; --coral-2:#F28C7F;
+  --marigold:#F0A23A; --sun:#FFC94D;
+  --night:#3D1F57;              /* the title sign — deep dusk violet */
+  /* one colour per super power */
+  --z1:#EC5F8D; --z1d:#C94170;  /* happy playtime & supportive families */
+  --z2:#1E9AB0; --z2d:#157A8C;  /* open doors for everyone */
+  --z3:#3FA66B; --z3d:#2C8452;  /* safe shield & helper teams */
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --W:900px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{overflow-x:hidden}
+body{
+  background:var(--cream);
+  overflow-x:hidden;
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  display:flex; justify-content:center;
+}
+#fit{width:var(--W)}
+.poster{width:var(--W);background:var(--cream);overflow:hidden;position:relative}
+
+/* ---------- shared type ---------- */
+.band{position:relative;padding:44px 56px}
+.band.tight{padding:36px 56px}
+h2.sec{
+  font-size:30px;font-weight:800;letter-spacing:-.4px;line-height:1.15;
+  margin:0 0 8px;text-align:center;
+}
+p.lede{
+  font-size:16px;line-height:1.5;font-weight:400;color:var(--ink-2);
+  margin:0 auto 26px;text-align:center;max-width:640px;
+}
+.kicker{
+  font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  text-align:center;color:var(--lagoon);margin:0 0 10px;
+}
+
+/* ---------- header ---------- */
+.hdr{background:#CDB9E6;padding:0;height:391px;position:relative}
+.hdr svg.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hdr .plate{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:640px;text-align:center;z-index:2}
+.sign{
+  background:var(--night);border-radius:10px;padding:20px 26px 22px;
+  box-shadow:0 6px 0 rgba(0,0,0,.13);
+}
+.sign h1{
+  margin:0;color:#fff;font-size:37px;font-weight:800;line-height:1.02;letter-spacing:-1.1px;white-space:nowrap;
+  text-shadow:0 2px 0 rgba(0,0,0,.12);
+}
+.sign .acr{
+  margin:10px 0 0;color:#FFD27A;font-size:13px;font-weight:600;letter-spacing:1.3px;
+  text-transform:uppercase;line-height:1.45;
+}
+.subplate{
+  margin:16px auto 0;background:var(--cream-2);border-radius:8px;padding:12px 22px;width:596px;
+  box-shadow:0 4px 0 rgba(0,0,0,.09);
+  display:flex;align-items:center;gap:18px;text-align:left;
+}
+.subplate p{margin:0;font-size:14.5px;font-weight:500;line-height:1.45;color:var(--ink-2)}
+.logo{display:block;color:#494949;object-fit:contain}
+.subplate .logo{flex:0 0 66px;width:66px;height:63px}
+.subplate .divider{flex:0 0 2px;align-self:stretch;background:var(--haze);border-radius:1px}
+
+/* ---------- fact strip ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fact{background:transparent;border-radius:14px;padding:20px 12px 18px;text-align:center}
+.fact .num{font-size:52px;font-weight:800;line-height:.92;letter-spacing:-2px;color:var(--ink)}
+.fact .lbl{margin-top:9px;font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--coral);line-height:1.35}
+.fact .sub{margin-top:5px;font-size:11px;font-weight:400;color:var(--ink-3);line-height:1.35}
+.flags{display:flex;gap:6px;justify-content:center;margin-top:8px}
+
+/* ---------- two explainer cards ---------- */
+.explain{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.exp{background:var(--cream-2);border-radius:18px;padding:24px 24px 22px;box-shadow:0 3px 0 rgba(42,27,51,.09)}
+.exp .disc{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;margin-bottom:14px}
+.exp h3{margin:0 0 8px;font-size:19px;font-weight:800;line-height:1.2}
+.exp p{margin:0 0 9px;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.exp p:last-child{margin-bottom:0}
+.exp p b{color:var(--ink)}
+
+/* ---------- goals / needs grids ---------- */
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.goal{background:#fff;border-radius:16px;padding:24px 20px 22px;text-align:center;box-shadow:0 3px 0 rgba(42,27,51,.09)}
+.goal .disc{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;color:#fff}
+.goal h3{margin:0 0 6px;font-size:17px;font-weight:800}
+.goal p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.goal b{font-weight:700;color:var(--ink)}
+
+.needs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.need{
+  background:var(--cream-2);border-radius:16px;padding:20px 18px;
+  display:flex;gap:14px;align-items:flex-start;box-shadow:0 3px 0 rgba(42,27,51,.08);
+}
+.need .disc{
+  flex:0 0 46px;width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;color:#fff;
+}
+.need h3{margin:2px 0 4px;font-size:15px;font-weight:700;line-height:1.2}
+.need p{margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-3)}
+
+/* ---------- ring ---------- */
+.ringwrap{position:relative}
+#ring{display:block;width:100%;height:auto;overflow:visible}
+.node-g{cursor:pointer}
+.node-c{transition:transform 220ms var(--ease-out)}
+.pill-bg{fill:#fff}
+.pill-t{font-size:12.5px;font-weight:700;fill:var(--ink)}
+.spoke{stroke-linecap:round;fill:none}
+.ring-cap{
+  margin:8px auto 0;max-width:640px;text-align:center;font-size:14px;line-height:1.5;
+  color:var(--ink-2);min-height:44px;font-weight:500;
+}
+.ring-cap b{font-weight:700;color:var(--ink)}
+
+/* ---------- zone blocks ---------- */
+.zhead{display:flex;align-items:center;gap:15px;max-width:640px;margin:0 auto 14px}
+.znum{
+  flex:0 0 56px;width:56px;height:56px;border-radius:17px;display:grid;place-items:center;
+  color:#fff;font-size:27px;font-weight:800;box-shadow:0 3px 0 rgba(42,27,51,.14);
+}
+.zdisc{flex:0 0 54px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.ztitle h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1.14}
+.ztitle p{margin:4px 0 0;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
+.zlede{text-align:center;font-size:16.5px;font-weight:600;line-height:1.45;margin:0 auto 22px;max-width:620px;color:var(--ink-2)}
+.acts{display:grid;gap:14px}
+.acts.c2{grid-template-columns:repeat(2,1fr);max-width:700px;margin:0 auto}
+.acts.c3{grid-template-columns:repeat(3,1fr)}
+.actc{background:#fff;border-radius:16px;padding:17px 18px 16px;box-shadow:0 3px 0 rgba(42,27,51,.09);border-top:5px solid}
+.actc .disc{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;margin-bottom:11px}
+.actc h4{margin:0 0 5px;font-size:14.5px;font-weight:700;line-height:1.25}
+.actc p{margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+.saying{
+  display:inline-block;margin-top:9px;background:var(--z1);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;
+  padding:4px 10px;border-radius:999px;
+}
+
+/* ---------- the big idea (purple) ---------- */
+.you{background:var(--lagoon);color:#fff}
+.you h2.sec{color:#fff}
+.you .kicker{color:#E2D3F2}
+.quote{
+  text-align:center;font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-.3px;
+  max-width:720px;margin:0 auto 26px;
+}
+.quote em{font-style:normal;color:var(--sun)}
+.ypts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ypt{background:rgba(255,255,255,.13);border-radius:14px;padding:18px 20px;text-align:center}
+.ypt .disc{width:44px;height:44px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;margin:0 auto 11px}
+.ypt h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.ypt p{margin:0;font-size:12.5px;line-height:1.45;color:#E9DFF5}
+
+/* ---------- city (three.js) ---------- */
+.big{background:var(--ink);color:#fff;padding:44px 56px 30px;position:relative;overflow:hidden}
+.big h2.sec{color:#fff}
+.big p.lede{color:#C3B3CC}
+.cityscape{position:relative;height:340px;margin:0 -16px}
+#city3d{position:absolute;inset:0;width:100%;height:100%;display:block}
+#cityFallback{position:absolute;inset:0;width:100%;height:100%}
+.blocklegend{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin-top:6px}
+.blocklegend span{font-size:11px;font-weight:600;color:#D4C6DB;display:flex;align-items:center;gap:6px}
+.blocklegend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.bigline{
+  text-align:center;font-size:17px;line-height:1.5;font-weight:500;color:#E8DDEE;
+  max-width:680px;margin:14px auto 0;
+}
+.bigline b{color:var(--sun);font-weight:700}
+
+/* ---------- cta ---------- */
+.cta{background:var(--coral);color:#fff;text-align:center;padding:40px 56px 36px;position:relative;overflow:hidden}
+.cta h2{margin:0 0 8px;font-size:33px;font-weight:800;line-height:1.08;letter-spacing:-1px;text-shadow:0 2px 0 rgba(0,0,0,.1)}
+.cta .sub{margin:0;font-size:18px;font-weight:600;color:#FFE0DA}
+
+/* ---------- partners ---------- */
+/* One white plate rather than four tiles. The four files ship with very
+   different amounts of baked-in padding (NIHR is ~80% whitespace vertically,
+   CLCD ~64%) and very different lockups (an 8.7:1 wordmark beside 1:1 marks),
+   so any equal-tile grid renders some logos at a third the optical size of
+   others. Each logo instead sits in a box clipped to its own artwork and sized
+   so every mark lands at a comparable ink height. */
+.funding{
+  max-width:706px;margin:20px auto 0;text-align:center;
+  font-size:11px;line-height:1.65;color:var(--ink-3);
+}
+.partners{
+  background:#fff;border-radius:16px;box-shadow:0 3px 0 rgba(42,27,51,.09);
+  padding:24px 30px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+/* absolute centring, not grid place-items: once the image is wider than its
+   box the grid column sizes to max-content and the crop falls off the left */
+.plogo{position:relative;overflow:hidden;flex:0 0 auto;display:block}
+.plogo img{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  display:block;width:auto;max-width:none;
+}
+.p-ucl   {width:143px;height:42px}  .p-ucl    img{height:42px}
+.p-nihr  {width:200px;height:23px}  .p-nihr   img{height:116px}
+.p-flacso{width:42px; height:62px}  .p-flacso img{height:63px}
+.p-clcd  {width:145px;height:70px}  .p-clcd   img{height:70px}
+
+/* ---------- source ---------- */
+.src{background:#fff;padding:16px 56px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.src p{margin:0;font-size:10.5px;line-height:1.5;color:var(--ink-3)}
+.src b{color:var(--ink-2);font-weight:700}
+.badge{flex:0 0 auto;display:flex;align-items:center;gap:12px;border:2px solid var(--haze);border-radius:10px;padding:9px 15px}
+.badge .logo{width:113px;height:107px}
+.badge span{font-size:10px;font-weight:800;letter-spacing:1.4px;line-height:1.3;color:var(--lagoon-deep)}
+
+/* ---------- big-word tooltips ---------- */
+.gloss{
+  position:relative;cursor:help;
+  border-bottom:2px dotted var(--coral);
+}
+.gloss::after,.gloss::before{
+  opacity:0;pointer-events:none;
+  transition:opacity 150ms var(--ease-out),transform 150ms var(--ease-out);
+}
+.gloss::after{
+  content:attr(data-tip);
+  position:absolute;left:50%;bottom:calc(100% + 12px);
+  transform:translateX(-50%) translateY(5px);
+  width:236px;
+  background:var(--ink);color:#fff;
+  font-family:'Poppins',system-ui,sans-serif;
+  font-size:12.5px;line-height:1.45;font-weight:500;font-style:normal;
+  text-align:left;text-transform:none;letter-spacing:0;
+  padding:10px 13px;border-radius:10px;
+  box-shadow:0 8px 22px rgba(42,27,51,.3);
+  z-index:60;
+}
+.gloss::before{
+  content:"";
+  position:absolute;left:50%;bottom:calc(100% + 6px);
+  transform:translateX(-50%) translateY(5px);
+  border:6px solid transparent;border-top-color:var(--ink);
+  z-index:61;
+}
+.gloss:hover::after,.gloss:hover::before,
+.gloss:focus::after,.gloss:focus::before{
+  opacity:1;transform:translateX(-50%) translateY(0);
+}
+.gloss:focus{outline:none}
+.gloss:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:3px}
+.you .gloss,.big .gloss{border-bottom-color:var(--sun)}
+
+/* ---------- motion ---------- */
+.reveal{opacity:0;transform:translateY(14px)}
+.shown{opacity:1;transform:none;transition:opacity 420ms var(--ease-out),transform 420ms var(--ease-out)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  .shown{transition:none}
+}
+@media print{
+  body{background:#fff}
+  #fit{zoom:1!important}
+  .reveal{opacity:1!important;transform:none!important}
+  /* hover cannot happen on paper — drop the cue and the tooltip */
+  .gloss{border-bottom:none}
+  .gloss::after,.gloss::before{display:none}
+}
+
+/* power 2 — the fix list for buildings */
+.team{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px auto 0;max-width:788px}
+.chip{
+  display:flex;align-items:center;gap:9px;background:#fff;border-radius:999px;
+  padding:7px 16px 7px 7px;box-shadow:0 3px 0 rgba(42,27,51,.09);
+  font-size:13px;font-weight:700;color:var(--ink);
+}
+.chip .disc{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#fff}
+</style>
+</head>
+<body>
+
+<!-- ============ ICON LIBRARY — authored on a 24x24 grid ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-heart" transform="translate(0 -1)"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></g>
+  <g id="i-child"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20.5c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2"/></g>
+  <g id="i-family"><circle cx="8" cy="7.6" r="2.8"/><circle cx="16.6" cy="9" r="2.2"/><path d="M3.4 19.6c0-2.9 2.1-5 4.6-5s4.6 2.1 4.6 5"/><path d="M14 19.6c0-2.3 1.2-3.9 2.9-3.9s2.9 1.6 2.9 3.9"/></g>
+  <g id="i-people"><circle cx="12" cy="6.6" r="2.6"/><circle cx="5" cy="10.4" r="2.2"/><circle cx="19" cy="10.4" r="2.2"/><path d="M7.4 18.4c0-2.6 2-4.5 4.6-4.5s4.6 1.9 4.6 4.5"/><path d="M2 19.6c0-2.1 1.4-3.6 3.2-3.6"/><path d="M22 19.6c0-2.1-1.4-3.6-3.2-3.6"/></g>
+  <g id="i-gov"><path d="M3.5 9.6 12 4.4l8.5 5.2"/><path d="M5.5 10.6V18M10 10.6V18M14 10.6V18M18.5 10.6V18"/><path d="M3.5 20.6h17"/></g>
+  <g id="i-teacher"><path d="M3 8.4 12 4.2l9 4.2-9 4.2Z"/><path d="M7 10.6v4.6c0 1.6 2.4 2.8 5 2.8s5-1.2 5-2.8v-4.6"/><path d="M21 8.4V14"/></g>
+  <g id="i-stetho"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.4M14 3h1.6"/><path d="M10 12v2.6a4.4 4.4 0 0 0 8.8 0V13"/><circle cx="18.8" cy="11" r="2"/></g>
+  <g id="i-house"><path d="M4 11.2 12 4l8 7.2"/><path d="M6 10.5V20h12v-9.5"/><path d="M10 20v-5h4v5"/></g>
+  <g id="i-shield"><path d="M12 3.2 19 6v5.5c0 4.4-3 7.4-7 9.3-4-1.9-7-4.9-7-9.3V6Z"/><path d="m9.2 12.1 2 2 3.6-3.9"/></g>
+  <g id="i-hands"><path d="M12 20.4S4.5 16 4.5 10.6A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7.5 2c0 5.4-7.5 9.8-7.5 9.8Z"/><path d="M12 8.6v11.8"/></g>
+  <g id="i-mic"><rect x="9.2" y="3" width="5.6" height="10.4" rx="2.8"/><path d="M5.6 11.6a6.4 6.4 0 0 0 12.8 0"/><path d="M12 18v3M8.8 21h6.4"/></g>
+  <g id="i-bowl"><path d="M4 12h16a8 8 0 0 1-16 0Z"/><path d="M3 20h18"/><path d="M9 8c0-1.5 1-2 1-3.2S9 3 9 3"/><path d="M14 8c0-1.5 1-2 1-3.2S14 3 14 3"/></g>
+  <g id="i-coin"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4v9.2"/><path d="M14.6 9.6c-.6-.8-1.6-1.2-2.7-1.2-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.8.4 2.9 1 2.9 2.2s-1.2 2-2.8 2c-1.2 0-2.2-.4-2.8-1.2"/></g>
+  <g id="i-map"><path d="M9.4 4.2 3.6 6.4v13.4l5.8-2.2 5.2 2.2 5.8-2.2V4.2l-5.8 2.2Z"/><path d="M9.4 4.2v13.4M14.6 6.4v13.4"/></g>
+  <g id="i-whistle"><path d="M3.4 11.4h9.2l3.4-3.4v9.2l-3.4-3.4H3.4z"/><circle cx="18.4" cy="12" r="2.6"/><path d="M6.2 14.6V18"/></g>
+  <g id="i-tree"><path d="M12 21v-3.6"/><path d="M12 3.4 6.2 12h11.6Z"/><path d="M12 8.6 4.8 17.6h14.4Z"/><path d="M8.6 21h6.8"/></g>
+  <g id="i-access"><circle cx="12" cy="4.2" r="2"/><path d="M9.6 8.4h4.8"/><path d="M12 8.4v6h4.4l2.2 6.2"/><circle cx="11" cy="16.6" r="4.4"/></g>
+  <g id="i-briefcase"><rect x="3" y="7.4" width="18" height="12.6" rx="2.2"/><path d="M9 7.4V5.6a1.8 1.8 0 0 1 1.8-1.8h2.4A1.8 1.8 0 0 1 15 5.6v1.8"/><path d="M3 12.6h18"/></g>
+  <g id="i-sprout"><path d="M12 21v-7.4"/><path d="M12 13.6C12 9.8 9.4 7.4 5.4 7.4c0 4 2.6 6.2 6.6 6.2Z"/><path d="M12 13.6c0-4.6 2.6-7.2 6.6-7.2 0 4.6-2.6 7.2-6.6 7.2Z"/><path d="M8.4 21h7.2"/></g>
+  <g id="i-chat"><path d="M4 5.4h16v10.4h-8.6L7 19.6v-3.8H4Z"/><path d="M8 9.4h8M8 12.2h5"/></g>
+  <g id="i-crown"><path d="M4 17.4 3 7.6l5 3.8L12 5l4 6.4 5-3.8-1 9.8Z"/><path d="M4.4 20.4h15.2"/></g>
+  <g id="i-check"><rect x="5" y="4.6" width="14" height="16.4" rx="2"/><path d="M9 4.6V3h6v1.6"/><path d="m8.6 13 2.4 2.4 4.6-4.8"/></g>
+  <g id="i-eye"><path d="M2.6 12S6.2 5.6 12 5.6 21.4 12 21.4 12 17.8 18.4 12 18.4 2.6 12 2.6 12Z"/><circle cx="12" cy="12" r="3"/></g>
+  <g id="i-radio"><rect x="3" y="8.4" width="18" height="12" rx="2.4"/><path d="m6.4 8.4 10-5"/><circle cx="15.6" cy="14.4" r="2.8"/><path d="M6.6 12.6h3.6M6.6 16.2h3.6"/></g>
+  <!-- added for Builsa North -->
+  <g id="i-star"><path d="m12 3.4 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z"/></g>
+  <g id="i-book"><path d="M12 6.6C10 5.1 7.2 4.6 3.6 4.8v13.6c3.6-.2 6.4.3 8.4 1.8 2-1.5 4.8-2 8.4-1.8V4.8c-3.6-.2-6.4.3-8.4 1.8Z"/><path d="M12 6.6v13.6"/></g>
+  <g id="i-ball"><circle cx="12" cy="12" r="8.4"/><path d="M3.9 10c3.6.9 6.6 3.6 7.8 10.3"/><path d="M20.1 14c-3.6-.9-6.6-3.6-7.8-10.3"/></g>
+  <g id="i-baby"><circle cx="12" cy="12.6" r="7.8"/><path d="M9.3 15.2c1.6 1.3 3.8 1.3 5.4 0"/><path d="M9.4 11.2h.01M14.6 11.2h.01" stroke-width="2.6"/><path d="M12 4.8c-1.8-.2-2.6 1.6-1.2 2.6"/></g>
+  <g id="i-blocks"><rect x="3.4" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="13" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="8.2" y="3.6" width="7.6" height="7.6" rx="1.4"/></g>
+  <g id="i-bag"><rect x="5" y="7.6" width="14" height="13" rx="3.2"/><path d="M9 7.6V6.2a3 3 0 0 1 6 0v1.4"/><path d="M8.6 13.6h6.8v3.6H8.6Z"/></g>
+  <g id="i-solar"><path d="M5.4 4.4h13.2l2.2 9H3.2Z"/><path d="M4.3 8.9h15.4M9.8 4.4l-.6 9M14.2 4.4l.6 9"/><path d="M12 13.4v5.2M8.2 20.6h7.6"/></g>
+  <g id="i-pot"><path d="M4.6 10.6h14.8v5.2a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4Z"/><path d="M2.6 10.6h18.8"/><path d="M9.2 7.4c0-1.4 1-1.8 1-3.2M13.8 7.4c0-1.4 1-1.8 1-3.2"/></g>
+  <symbol id="epic-mark" viewBox="0 0 24 24"><path d="M12 2 2 12l10 10 10-10Z"/></symbol>
+</defs></svg>
+
+<div id="fit"><div class="poster" id="poster">
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+  <svg class="scene" viewBox="0 0 900 391" preserveAspectRatio="xMidYMax slice"
+       role="img" aria-label="Effia-Kwesimintsim at dusk by the sea — coconut palms, homes, a church and a mosque, a school with a ramp and the Ghana flag, the Municipal Assembly, a playground swing, a fishing canoe and the harbour cranes of Takoradi">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#CDB9E6"/><stop offset=".5" stop-color="#EBC3D6"/>
+        <stop offset=".8" stop-color="#F9CDB6"/><stop offset="1" stop-color="#FBD9A6"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset=".45" stop-color="#FFC48A" stop-opacity=".85"/>
+        <stop offset="1" stop-color="#FFC48A" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#9C8CC8"/><stop offset="1" stop-color="#6E6AAE"/>
+      </linearGradient>
+    </defs>
+
+    <rect width="900" height="390" fill="url(#skyGrad)"/>
+
+    <!-- the evening sun, sinking toward the sea to the right of the title -->
+    <g id="skSun">
+      <circle id="sunHalo" cx="806" cy="246" r="58" fill="url(#sunGlow)"/>
+      <circle cx="806" cy="246" r="32" fill="#FFB35C"/>
+    </g>
+
+    <!-- thin streaks of sunset cloud -->
+    <g id="skClouds" fill="#fff" opacity=".6">
+      <g id="cloudA"><rect x="20" y="172" width="96" height="6" rx="3"/><rect x="52" y="182" width="70" height="5" rx="2.5"/></g>
+      <g id="cloudB"><rect x="770" y="118" width="104" height="6" rx="3"/><rect x="796" y="128" width="64" height="5" rx="2.5"/></g>
+    </g>
+
+    <!-- gulls cross the sky; the title plate hides the middle of the pass -->
+    <g id="skBirds" fill="none" stroke="#3D2350" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <g><path d="M0 0q6-6 12 0q6-6 12 0"/></g>
+      <g><path d="M0 0q6-6 12 0q6-6 12 0"/></g>
+      <g><path d="M0 0q6-6 12 0q6-6 12 0"/></g>
+    </g>
+
+    <!-- the Atlantic, with Takoradi harbour on the far shore and a band of beach sand -->
+    <g id="skFar">
+      <rect x="0" y="298" width="900" height="86" fill="url(#seaGrad)"/>
+      <rect x="0" y="298" width="900" height="2.5" fill="#C9BCEA"/>
+      <g fill="#8576B4">
+        <!-- a ship at anchor and two harbour cranes -->
+        <path d="M84 298l7-11h74l-5 11Z"/><rect x="134" y="276" width="18" height="11"/><rect x="140" y="268" width="5" height="8"/>
+        <rect x="182" y="232" width="5" height="66"/><path d="M170 238h62v4h-62Z"/><path d="M226 242v20" stroke="#8576B4" stroke-width="1.6"/>
+        <rect x="246" y="246" width="5" height="52"/><path d="M236 250h52v4h-52Z"/><path d="M284 254v16" stroke="#8576B4" stroke-width="1.6"/>
+      </g>
+      <!-- sunlight glittering on the water under the sun -->
+      <g id="seaGlint" fill="#FFD9A6" opacity=".8">
+        <rect x="778" y="305" width="56" height="2.6" rx="1.3"/><rect x="788" y="313" width="38" height="2.4" rx="1.2"/>
+        <rect x="770" y="322" width="46" height="2.4" rx="1.2"/><rect x="796" y="331" width="30" height="2.2" rx="1.1"/>
+        <rect x="60" y="318" width="34" height="2" rx="1"/><rect x="420" y="312" width="40" height="2" rx="1"/><rect x="540" y="326" width="28" height="2" rx="1"/>
+      </g>
+      <path fill="#EBC9A4" d="M0 366C80 360 170 364 260 368S420 372 520 366 720 360 800 366 870 370 900 366V384H0Z"/>
+    </g>
+
+    <!-- Original silhouettes of a Kwesimintsim street by the sea, drawn for this
+         poster standing on y=384. The warm #FFE1B8 shapes are lit windows. -->
+    <g id="skMid">
+      <!-- a fishing canoe out on the water, bobbing -->
+      <g id="canoe" fill="#3D2350">
+        <path d="M232 346q30 10 60 0l-4 6q-26 9-52 0Z"/>
+        <circle cx="258" cy="330" r="3.4"/><rect x="256" y="333.5" width="4" height="12" rx="1.5"/>
+        <path d="M262 336 276 350" fill="none" stroke="#3D2350" stroke-width="2" stroke-linecap="round"/>
+        <path d="M274 345v-17l9 4-9 4" />
+      </g>
+      <g id="skMidGeom" fill="#3D2350">
+        <!-- a coconut palm at the western edge -->
+        <g id="treeL">
+          <path d="M28 384C33 352 39 322 50 292" fill="none" stroke="#3D2350" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50 290Q28 276 6 292Q30 282 50 293Z"/><path d="M50 290Q40 268 20 262Q42 272 51 290Z"/>
+          <path d="M50 290Q58 266 78 262Q60 274 51 291Z"/><path d="M50 290Q74 278 94 294Q72 284 50 293Z"/>
+          <path d="M50 290Q52 270 48 254Q56 270 52 290Z"/>
+          <circle cx="47" cy="295" r="3.2"/><circle cx="54" cy="296" r="3.2"/>
+        </g>
+        <!-- a family home with a pitched tin roof -->
+        <rect x="98" y="346" width="46" height="38"/><path d="M92 348 121 324 150 348Z"/>
+        <rect x="106" y="356" width="10" height="10" fill="#FFE1B8"/><path d="M126 384v-16h10v16Z" fill="#FFE1B8"/>
+        <!-- a church with its steeple -->
+        <rect x="164" y="330" width="52" height="54"/><path d="M158 332 190 306 222 332Z"/>
+        <rect x="183" y="284" width="14" height="26"/><path d="M181 286 190 262 199 286Z"/>
+        <rect x="189" y="250" width="2" height="13"/><rect x="185" y="254" width="10" height="2"/>
+        <circle cx="190" cy="320" r="4" fill="#FFE1B8"/>
+        <path d="M184 384v-16a6 6 0 0 1 12 0v16Z" fill="#FFE1B8"/>
+        <!-- the school, with a ramp up to its door and its flagpole -->
+        <rect x="304" y="346" width="84" height="38"/><path d="M298 348 314 332H378L394 348Z"/>
+        <rect x="311" y="354" width="10" height="11" fill="#FFE1B8"/><rect x="327" y="354" width="10" height="11" fill="#FFE1B8"/>
+        <rect x="355" y="354" width="10" height="11" fill="#FFE1B8"/><rect x="371" y="354" width="10" height="11" fill="#FFE1B8"/>
+        <path d="M340 384v-15a6 6 0 0 1 12 0v15Z" fill="#FFE1B8"/>
+        <path d="M352 384H380L352 377Z" fill="#6E5A86"/>
+        <rect x="400" y="290" width="2.6" height="94"/>
+        <!-- Effia-Kwesimintsim Municipal Assembly: two storeys under a pediment -->
+        <rect x="420" y="326" width="144" height="58"/><rect x="414" y="320" width="156" height="7"/>
+        <path d="M460 320 492 300 524 320Z"/>
+        <rect x="430" y="334" width="11" height="13" fill="#FFE1B8"/><rect x="448" y="334" width="11" height="13" fill="#FFE1B8"/>
+        <rect x="525" y="334" width="11" height="13" fill="#FFE1B8"/><rect x="543" y="334" width="11" height="13" fill="#FFE1B8"/>
+        <rect x="430" y="356" width="11" height="13" fill="#FFE1B8"/><rect x="448" y="356" width="11" height="13" fill="#FFE1B8"/>
+        <rect x="525" y="356" width="11" height="13" fill="#FFE1B8"/><rect x="543" y="356" width="11" height="13" fill="#FFE1B8"/>
+        <path d="M474 384v-44h36v44Z" fill="#FFE1B8"/><rect x="482" y="340" width="3" height="44"/><rect x="499" y="340" width="3" height="44"/>
+        <circle cx="492" cy="311" r="4.5" fill="#FFE1B8"/>
+        <!-- a mosque: dome and minaret -->
+        <rect x="604" y="340" width="64" height="44"/><path d="M614 341a22 22 0 0 1 44 0Z"/>
+        <rect x="635" y="310" width="2" height="10"/><circle cx="636" cy="308" r="2.6"/>
+        <rect x="672" y="296" width="10" height="88"/><path d="M670 298 677 282 684 298Z"/>
+        <rect x="674" y="310" width="6" height="7" fill="#FFE1B8"/>
+        <path d="M630 384v-14a6 6 0 0 1 12 0v14Z" fill="#FFE1B8"/>
+        <!-- the playground: a swing frame (the swing itself moves) -->
+        <path d="M702 384 714 330 726 384M770 384 758 330 746 384" fill="none" stroke="#3D2350" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="710" y="327" width="52" height="4.4" rx="2"/>
+        <!-- a home at the eastern end -->
+        <rect x="798" y="350" width="40" height="34"/><path d="M792 352 818 330 844 352Z"/>
+        <rect x="806" y="358" width="9" height="9" fill="#FFE1B8"/><path d="M822 384v-14h9v14Z" fill="#FFE1B8"/>
+        <!-- a coconut palm at the eastern edge -->
+        <g id="treeR"><g transform="translate(900,0) scale(-1,1)">
+          <path d="M28 384C33 352 39 322 50 292" fill="none" stroke="#3D2350" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50 290Q28 276 6 292Q30 282 50 293Z"/><path d="M50 290Q40 268 20 262Q42 272 51 290Z"/>
+          <path d="M50 290Q58 266 78 262Q60 274 51 291Z"/><path d="M50 290Q74 278 94 294Q72 284 50 293Z"/>
+          <path d="M50 290Q52 270 48 254Q56 270 52 290Z"/>
+          <circle cx="47" cy="295" r="3.2"/><circle cx="54" cy="296" r="3.2"/>
+        </g></g>
+      </g>
+      <!-- a child on the swing -->
+      <g id="swing" fill="#3D2350">
+        <path d="M729 331v33M743 331v33" fill="none" stroke="#3D2350" stroke-width="1.6"/>
+        <rect x="724" y="363" width="24" height="3.4" rx="1.5"/>
+        <circle cx="736" cy="346" r="4.6"/><path d="M732 352h8l1 11h-10Z"/>
+        <path d="M733 363l-3 9M739 363l4 8" fill="none" stroke="#3D2350" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+      <!-- Ghana's flag over the school -->
+      <g id="skFlag" transform="translate(402.6,291)">
+        <rect width="26" height="5.4" fill="#CE1126"/><rect y="5.4" width="26" height="5.4" fill="#FCD116"/><rect y="10.8" width="26" height="5.4" fill="#006B3F"/>
+        <path d="m13 5.9 1 2.1 2.3.2-1.7 1.5.5 2.2-2.1-1.2-2.1 1.2.5-2.2-1.7-1.5 2.3-.2Z" fill="#000"/>
+      </g>
+    </g>
+
+    <g id="skNear" fill="#2A1B33"><rect x="0" y="384" width="900" height="7"/></g>
+  </svg>
+  <div class="plate">
+    <div class="sign">
+      <h1>Effia-Kwesimintsim's Big Plan</h1>
+      <p class="acr">For our little superstars!</p>
+    </div>
+    <div class="subplate">
+      <img class="logo" src="epic-logo-2.svg" alt="EPIC">
+      <div class="divider"></div>
+      <p>Who decides how the play spaces, schools and helpers in your town get better — and how can <b>you</b> help?</p>
+    </div>
+  </div>
+</header>
+
+<!-- ============ OPENING LEDE ============ -->
+<section class="band tight" style="background:var(--cream);padding-bottom:10px">
+  <p class="lede" style="margin-bottom:0">Every child in Effia-Kwesimintsim deserves to grow up <b>happy, safe and ready to learn</b> — no matter who they are or where they live! The <b><span class="gloss" tabindex="0" data-tip="The local government team in charge of Effia-Kwesimintsim, with its offices in Kwesimintsim, near Takoradi. People often call it EKMA for short.">Effia-Kwesimintsim Municipal Assembly</span></b> in the <b><span class="gloss" tabindex="0" data-tip="Ghana is split into sixteen big areas called regions. The Western Region is in the south-west, along the Atlantic coast.">Western Region</span></b> made a big plan to make that happen.</p>
+</section>
+
+<!-- ============ FACT STRIP ============ -->
+<section class="band tight" style="background:var(--cream)">
+  <div class="facts reveal">
+    <div class="fact">
+      <div class="num">3</div>
+      <div class="lbl">Super powers</div>
+      <div class="sub">Three big areas to work on</div>
+    </div>
+    <div class="fact">
+      <div class="num">1</div>
+      <div class="lbl">Big plan for Effia-Kwesimintsim</div>
+      <div class="flags">
+        <svg width="30" height="20" viewBox="0 0 30 20" role="img" aria-label="Ghana">
+          <rect width="30" height="6.67" fill="#CE1126"/><rect y="6.67" width="30" height="6.67" fill="#FCD116"/><rect y="13.34" width="30" height="6.66" fill="#006B3F"/>
+          <path d="m15 7.4 1.1 2.3 2.5.3-1.9 1.7.5 2.5-2.2-1.3-2.2 1.3.5-2.5-1.9-1.7 2.5-.3Z" fill="#000"/>
+          <rect width="30" height="20" fill="none" stroke="rgba(0,0,0,.18)"/>
+        </svg>
+      </div>
+      <div class="sub" style="margin-top:5px">Kwesimintsim, Western Region</div>
+    </div>
+    <div class="fact">
+      <div class="num">12</div>
+      <div class="lbl">Play dates a year</div>
+      <div class="sub">A fun one every month</div>
+    </div>
+    <div class="fact">
+      <div class="num">0</div>
+      <div class="lbl">Children left out</div>
+      <div class="sub">Every child is special, equal and loved</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO BIG WORDS EXPLAINED ============ -->
+<section class="band" style="background:var(--haze)">
+  <p class="kicker">First, two big words</p>
+  <h2 class="sec">Who makes the plan — and what is it?</h2>
+  <p class="lede">Grown-ups use some tricky words for this. Here is what they actually mean.</p>
+  <div class="explain reveal">
+    <div class="exp">
+      <div class="disc" style="background:var(--lagoon)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-whistle"/></svg></div>
+      <h3>What is a District Assembly?</h3>
+      <p>Imagine your neighbourhood as a huge team — the <b>District Assembly</b> is like the coaches and leaders of that team!</p>
+      <p>They are the <span class="gloss" tabindex="0" data-tip="The leaders in charge of your own district, rather than the whole country.">local government</span> people whose job is to take care of the town: fix roads, build schools, keep streets clean, and make sure everyone stays safe and happy.</p>
+    </div>
+    <div class="exp">
+      <div class="disc" style="background:var(--coral)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-map"/></svg></div>
+      <h3>What is a District Plan?</h3>
+      <p>A <b>district plan</b> is like a giant map made by local leaders to make a town or city a much better place to live!</p>
+      <p>Instead of adults just guessing what to do, the plan lists the biggest problems — dirty streets, schools that need help, places that need safer parks — then writes a <b>step-by-step checklist</b> for fixing them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY THEY MADE THE PLAN ============ -->
+<section class="band" style="background:var(--cream)">
+  <p class="kicker">Why did they make the plan?</p>
+  <h2 class="sec">So every child grows up…</h2>
+  <p class="lede">Every child in Effia-Kwesimintsim deserves to grow up like this — <b>no matter who they are or where they live!</b></p>
+  <div class="goals reveal">
+    <div class="goal">
+      <div class="disc" style="background:var(--z1)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></div>
+      <h3>Happy</h3>
+      <p>Full of play, laughter and good friends.</p>
+    </div>
+    <div class="goal">
+      <div class="disc" style="background:var(--z3)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div>
+      <h3>Safe</h3>
+      <p>Protected at home, at school and everywhere.</p>
+    </div>
+    <div class="goal">
+      <div class="disc" style="background:var(--lagoon)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></div>
+      <h3>Ready to learn</h3>
+      <p>With open doors to every classroom.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR BIG DREAM ============ -->
+<section class="band tight" style="background:var(--cream);padding-top:8px">
+  <p class="kicker">Our big dream</p>
+  <h2 class="sec">A community where EVERY child…</h2>
+  <p class="lede">This is the <span class="gloss" tabindex="0" data-tip="A picture of the future that everyone is working towards.">vision</span> — the town Effia-Kwesimintsim's leaders are building, together.</p>
+  <div class="needs reveal" style="grid-template-columns:1fr;max-width:620px;margin:0 auto">
+    <div class="need"><div class="disc" style="background:var(--z1)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div><div><h3>Plays, laughs and learns</h3><p>In a safe and friendly space.</p></div></div>
+    <div class="need"><div class="disc" style="background:var(--z2)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div><div><h3>Can easily join in all the fun</h3><p>Including children with <span class="gloss" tabindex="0" data-tip="When a body or brain works in its own way — like needing a wheelchair to get around, or extra help to see, hear or learn.">disabilities</span>.</p></div></div>
+    <div class="need"><div class="disc" style="background:var(--z3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div><div><h3>Is loved, protected and kept safe</h3><p>From all harm, at home and in the community.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ THE BIG IDEA (purple) ============ -->
+<section class="band you">
+  <p class="kicker">The big idea</p>
+  <div class="quote">When families, chiefs, teachers and helpers<br>work together as one big team,<br><em>every child in Effia-Kwesimintsim<br>grows up happy, safe and ready to learn.</em></div>
+  <div class="ypts reveal">
+    <div class="ypt"><div class="disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-child"/></svg></div><div><h4>Children</h4><p>You are the little superstars the whole plan is for — every one of you special, equal and loved.</p></div></div>
+    <div class="ypt"><div class="disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div><div><h4>Families</h4><p>Mums and dads meet at parent clubs to share ideas and learn great ways to care for their little ones.</p></div></div>
+    <div class="ypt"><div class="disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-people"/></svg></div><div><h4>Communities</h4><p>Chiefs, church and mosque leaders, teachers and <span class="gloss" tabindex="0" data-tip="People who help out because they care, not because it is their job.">volunteers</span> all keep watch and lend a hand.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ THE THREE SUPER POWERS RING (D3) ============ -->
+<section class="band" style="background:var(--skywash)">
+  <p class="kicker">Understanding the plan</p>
+  <h2 class="sec">Our 3 Super Powers</h2>
+  <p class="lede" style="margin-bottom:6px">To help every child grow up happy and safe, Effia-Kwesimintsim's leaders are focusing on three <span class="gloss" tabindex="0" data-tip="The things that matter most, so they get done first.">priority areas</span> — and every one of them points back at the same thing.</p>
+  <div class="ringwrap reveal">
+    <svg id="ring" viewBox="0 6 900 504" role="img" aria-label="Three Super Powers arranged around every child in Effia-Kwesimintsim">
+      <circle cx="450" cy="300" r="180" fill="none" stroke="#B9A6D6" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+      <g id="spokes" stroke-width="4" stroke-linecap="round"></g>
+      <g id="nodes"></g>
+      <g id="hub">
+        <circle cx="450" cy="300" r="80" fill="#fff" opacity=".65"/>
+        <circle cx="450" cy="300" r="72" fill="#55308A"/>
+        <g transform="translate(433.8,258) scale(1.35)" fill="none" stroke="#FFFFFF" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+          <use href="#i-child"/>
+        </g>
+        <text x="450" y="306" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">EVERY CHILD IN</text>
+        <text x="450" y="322" text-anchor="middle" fill="#FFC94D" font-size="12.5" font-weight="700">EFFIA-</text>
+        <text x="450" y="338" text-anchor="middle" fill="#FFC94D" font-size="12.5" font-weight="700">KWESIMINTSIM</text>
+      </g>
+    </svg>
+    <p class="ring-cap" id="ringCap"><b>Happy Playtime &amp; Supportive Families.</b> Monthly play dates for children, and parent clubs where mums and dads share great ideas.</p>
+  </div>
+</section>
+
+<!-- ============ POWER 1 ============ -->
+<section class="band" style="background:var(--cream)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z1)">1</div>
+    <div class="zdisc" style="background:var(--z1d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div>
+    <div class="ztitle"><h3>Happy Playtime &amp; Supportive Families</h3><p style="color:var(--z1d)"><span class="gloss" tabindex="0" data-tip="How you feel inside, and how well you get along with the people around you.">Psychosocial well-being</span></p></div>
+  </div>
+  <p class="zlede">Lots of play, lots of friends — and happy, helpful homes!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z1)">
+      <div class="disc" style="background:var(--z1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div>
+      <h4>Monthly play dates</h4>
+      <p>Fun, creative play sessions every month, where children can make friends, play games and <span class="gloss" tabindex="0" data-tip="Showing what you think and feel — by talking, drawing, dancing, singing or playing.">express themselves</span>!</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--lagoon)">
+      <div class="disc" style="background:var(--lagoon)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div>
+      <h4>Parent clubs</h4>
+      <p>Monthly parent meetings and friendly classes, so mums and dads can share <span class="gloss" tabindex="0" data-tip="All the ways mums, dads and caregivers love, guide and look after their children.">parenting</span> ideas and learn great ways to care for their little ones.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POWER 2 ============ -->
+<section class="band" style="background:var(--haze)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z2)">2</div>
+    <div class="zdisc" style="background:var(--z2d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div>
+    <div class="ztitle"><h3>Open Doors for Everyone</h3><p style="color:var(--z2d)"><span class="gloss" tabindex="0" data-tip="Making sure children with disabilities can join in everything — learning, playing and having fun.">Disability inclusion</span></p></div>
+  </div>
+  <p class="zlede">Every door, every game and every classroom — open to every child!</p>
+  <div class="acts c3 reveal">
+    <div class="actc" style="border-top-color:var(--z2)">
+      <div class="disc" style="background:var(--z2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div>
+      <h4>Fixing play spaces &amp; schools</h4>
+      <p>Checking our buildings and adding smooth <span class="gloss" tabindex="0" data-tip="A gentle slope instead of steps, so a wheelchair, a pram or wobbly legs can roll or walk right in.">ramps</span>, handrails and <span class="gloss" tabindex="0" data-tip="Easy for everyone to get into and use — including children who use wheelchairs.">accessible</span> toilets, so children using wheelchairs or extra support can join in easily.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--lagoon)">
+      <div class="disc" style="background:var(--lagoon)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-crown"/></svg></div>
+      <h4>Talking with community leaders</h4>
+      <p>Partnering with <span class="gloss" tabindex="0" data-tip="Chiefs and queen mothers who lead their towns by custom, handed down over many years.">traditional chiefs</span> and church and mosque leaders to teach everyone that every child is special, equal and loved!</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--z1)">
+      <div class="disc" style="background:var(--z1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></div>
+      <h4>Playing together</h4>
+      <p>Making sure children with special needs join right in with all the fun games and play sessions!</p>
+    </div>
+  </div>
+  <div class="team reveal">
+    <span class="chip"><span class="disc" style="background:var(--z2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></span>Smooth ramps</span>
+    <span class="chip"><span class="disc" style="background:var(--lagoon)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></span>Handrails</span>
+    <span class="chip"><span class="disc" style="background:var(--coral)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>Accessible toilets</span>
+  </div>
+</section>
+
+<!-- ============ POWER 3 ============ -->
+<section class="band" style="background:var(--cream)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z3)">3</div>
+    <div class="zdisc" style="background:var(--z3d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div>
+    <div class="ztitle"><h3>Safe Shield &amp; Helper Teams</h3><p style="color:var(--z3d)"><span class="gloss" tabindex="0" data-tip="Keeping children safe from harm, and helping them quickly if something goes wrong.">Child protection</span></p></div>
+  </div>
+  <p class="zlede">Grown-ups who keep watch — and help that comes right away!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z3)">
+      <div class="disc" style="background:var(--z3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mic"/></svg></div>
+      <h4>Community safety talks</h4>
+      <p>Visiting neighbourhood centres and schools to teach children and adults how to stay safe — and where to get help.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--lagoon)">
+      <div class="disc" style="background:var(--lagoon)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-teacher"/></svg></div>
+      <h4>Teacher &amp; volunteer training</h4>
+      <p>Training teachers and community helpers so they can quickly spot when a child needs help — and protect them.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--z1)">
+      <div class="disc" style="background:var(--z1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div>
+      <h4>Caring counselling</h4>
+      <p>Gentle <span class="gloss" tabindex="0" data-tip="Talking with a kind, trained helper about your feelings, so hard things feel lighter.">counselling</span> and support to help children and families heal if they face tough times.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--coral)">
+      <div class="disc" style="background:var(--coral)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-coin"/></svg></div>
+      <h4>Quick helper emergency team</h4>
+      <p>Clear helper pathways and an <span class="gloss" tabindex="0" data-tip="Money saved up for when a child suddenly needs help, so nobody has to wait.">Emergency Fund</span>, so <span class="gloss" tabindex="0" data-tip="Children who are more likely to be hurt or left out, and need extra care.">vulnerable</span> children get medical, legal or <span class="gloss" style="white-space:nowrap" tabindex="0" data-tip="A safe place to stay, with caring grown-ups, for a child who cannot be safe at home.">safe-haven</span> support right away!</p>
+      <span class="saying" style="background:var(--coral)">Help right away</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE TOWN (three.js) ============ -->
+<section class="big">
+  <p class="kicker" style="color:var(--sun)">Why three super powers and not one</p>
+  <h2 class="sec">You can't build a better Effia-Kwesimintsim with one block</h2>
+  <p class="lede">Imagine building Effia-Kwesimintsim out of giant toy blocks. Every colour is one of the three super powers — take a colour away and the whole town wobbles.</p>
+  <div class="cityscape">
+    <svg id="cityFallback" viewBox="0 0 900 340" aria-label="A town skyline built from coloured toy blocks, one colour for each super power">
+      <g id="fbBlocks"></g>
+    </svg>
+    <canvas id="city3d" aria-hidden="true" style="opacity:0"></canvas>
+  </div>
+  <div class="blocklegend" id="legend"></div>
+  <p class="bigline">Play dates are great — but not if some children can't get through the door. Ramps help — but not if a child isn't safe at home. When all three super powers work together, <b>every child in Effia-Kwesimintsim grows up happy, safe and ready to learn.</b></p>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.14" viewBox="0 0 900 230" aria-hidden="true">
+    <circle cx="90" cy="40" r="60" fill="#fff"/><circle cx="820" cy="190" r="80" fill="#fff"/><circle cx="740" cy="30" r="34" fill="#fff"/>
+  </svg>
+  <div style="position:relative">
+    <h2>You are part of Effia-Kwesimintsim's team!</h2>
+    <p class="sub">Every little superstar here is special, equal and loved — including you.</p>
+  </div>
+</section>
+
+<!-- ============ WHAT CAN YOU DO ============ -->
+<section class="band" style="background:var(--cream)">
+  <p class="kicker">Your turn</p>
+  <h2 class="sec">What can you do?</h2>
+  <div class="goals reveal" style="margin-top:24px">
+    <div class="goal"><div class="disc" style="background:var(--z2)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></div><p style="font-size:15.5px"><b>Invite every kid to play with you</b></p></div>
+    <div class="goal"><div class="disc" style="background:var(--z1)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div><p style="font-size:15.5px"><b>Come to play dates and make new friends</b></p></div>
+    <div class="goal"><div class="disc" style="background:var(--z3)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div><p style="font-size:15.5px"><b>Tell a grown-up you trust if you ever feel unsafe</b></p></div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="band tight" style="background:var(--haze)">
+  <p class="kicker">Working together</p>
+  <h2 class="sec">Our partners</h2>
+  <p class="lede" style="margin-bottom:22px">These are the teams helping Effia-Kwesimintsim turn the plan into happy playtimes, open doors and safe homes.</p>
+  <div class="partners reveal">
+    <span class="plogo p-ucl"><img src="ucl.png" alt="UCL — University College London"></span>
+    <span class="plogo p-nihr"><img src="nihr.png" alt="NIHR — National Institute for Health and Care Research"></span>
+    <span class="plogo p-flacso"><img src="logo_flacso.png" alt="FLACSO Argentina"></span>
+    <span class="plogo p-clcd"><img src="clcd-ghana-logo.jpeg" alt="CLCD — Center for Learning and Childhood Development"></span>
+  </div>
+  <p class="funding">This research was funded by the National Institute for Health and Care Research (NIHR) [NIHR158910] using UK international development funding from the UK Government to support global health research. The views expressed in this publication are those of the author(s) and not necessarily those of the NIHR or the UK government.</p>
+</section>
+
+<!-- ============ SOURCE ============ -->
+<footer class="src">
+  <p><b>Source:</b> Effia-Kwesimintsim Municipal Assembly (EKMA) District Plan (Western Region) — child-friendly summary, prepared for the EPIC Project.<br>
+  A district plan built around three super powers so that every child in Effia-Kwesimintsim grows up happy, safe and ready to learn.</p>
+  <div class="badge">
+    <img class="logo" src="epic-logo-2.svg" alt="EPIC">
+    <span>CHILD-FRIENDLY<br>EDITION</span>
+  </div>
+</footer>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+"use strict";
+var SVGNS = "http://www.w3.org/2000/svg";
+var REDUCE = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function el(tag, attrs, parent){
+  var n = document.createElementNS(SVGNS, tag);
+  for (var k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+
+/* ---------------------------------------------------------------
+   1. THE THREE SUPER POWERS — a ring around every child
+   Geometry is rendered in plain DOM so the poster is complete
+   before any library loads; D3 then owns motion + interaction.
+---------------------------------------------------------------- */
+var CX = 450, CY = 300, R = 180, NODE_R = 52, HUB_R = 72;
+
+var ZONES = [
+  { key:"play",    icon:"#i-heart",  color:"#EC5F8D", ink:"#fff",
+    pill:["Happy Playtime &","Supportive Families"], pw:184, px:450, py:36,
+    title:"Happy Playtime & Supportive Families.", short:"Happy Playtime",
+    blurb:"Monthly play dates for children, and parent clubs where mums and dads share great ideas." },
+  { key:"doors",   icon:"#i-access", color:"#1E9AB0", ink:"#fff",
+    pill:["Open Doors","for Everyone"], pw:140, px:606, py:476,
+    title:"Open Doors for Everyone.", short:"Open Doors",
+    blurb:"Ramps, handrails and accessible toilets, chiefs and faith leaders on board, and every child in every game." },
+  { key:"safe",    icon:"#i-shield", color:"#3FA66B", ink:"#fff",
+    pill:["Safe Shield &","Helper Teams"], pw:146, px:294, py:476,
+    title:"Safe Shield & Helper Teams.", short:"Safe Shield",
+    blurb:"Safety talks, trained helpers, caring counselling and an emergency team, so help comes right away." }
+];
+
+(function buildRing(){
+  var spokes = document.getElementById("spokes");
+  var nodes  = document.getElementById("nodes");
+  if (!spokes || !nodes) return;
+
+  ZONES.forEach(function(d, i){
+    var a  = (-90 + i * (360 / ZONES.length)) * Math.PI / 180;
+    var co = Math.cos(a), si = Math.sin(a);
+    d.x = CX + R * co;
+    d.y = CY + R * si;
+
+    d.spoke = el("line", {
+      x1: CX + (HUB_R + 8) * co, y1: CY + (HUB_R + 8) * si,
+      x2: CX + (R - NODE_R - 4) * co, y2: CY + (R - NODE_R - 4) * si,
+      stroke: d.color, "stroke-opacity": .55, class: "spoke"
+    }, spokes);
+
+    var g = el("g", { class:"node-g", "data-key": d.key, tabindex: "0",
+                      role:"button", "aria-label": d.title.replace(/\.$/, "") }, nodes);
+    d.g = g;
+
+    el("circle", { cx:d.x, cy:d.y, r:NODE_R + 6, fill:"#fff", "fill-opacity":.55 }, g);
+    d.circle = el("circle", { cx:d.x, cy:d.y, r:NODE_R, fill:d.color, class:"node-c" }, g);
+
+    var ic = el("g", { transform:"translate(" + (d.x - 19.2) + "," + (d.y - 19.2) + ") scale(1.6)",
+                       fill:"none", stroke:d.ink, "stroke-width":1.5,
+                       "stroke-linecap":"round", "stroke-linejoin":"round",
+                       "pointer-events":"none" }, g);
+    var use = el("use", {}, ic);
+    use.setAttribute("href", d.icon);
+
+    // label pill, placed radially outside its node
+    var ph = d.pill.length > 1 ? 46 : 34;
+    el("rect", { x: d.px - d.pw / 2, y: d.py - ph / 2, width:d.pw, height:ph,
+                 rx: ph / 2, class:"pill-bg", "pointer-events":"none" }, g);
+    d.pill.forEach(function(line, li){
+      var t = el("text", {
+        x: d.px, y: d.py + (d.pill.length > 1 ? (li === 0 ? -3 : 14) : 4.5),
+        "text-anchor":"middle", class:"pill-t", "pointer-events":"none"
+      }, g);
+      t.textContent = line;
+    });
+  });
+})();
+
+/* ---------------------------------------------------------------
+   2. The block city — one colour per super power
+---------------------------------------------------------------- */
+var BRICK = ZONES.map(function(d){ return d.color; });
+var NZ = BRICK.length;
+
+function cityBlocks(){
+  var B = [];
+  var add = function(x, y, w, h, c){ B.push({ x:x, y:y, w:w, h:h, c:c }); };
+  // street-level course, right across the city
+  for (var i = -4; i <= 4; i++) add(i, 0, .96, .6, (i + 10) % NZ);
+  // towers, tallest in the middle
+  var TOWERS = [
+    { x:-3.9, h:4 }, { x:-2.95, h:2 }, { x:-1.95, h:5 }, { x:-.95, h:3 },
+    { x:0,    h:6 },
+    { x:.95,  h:3 }, { x:1.95, h:5 }, { x:2.95, h:2 }, { x:3.9, h:4 }
+  ];
+  TOWERS.forEach(function(t, k){
+    for (var r = 1; r <= t.h; r++) add(t.x, r, .86, .6, (k + r) % NZ);
+    add(t.x, t.h + 1, .42, .5, (k + t.h + 2) % NZ);   // rooftop cap
+  });
+  // Even the colours out by measurement: each pass moves one block from the
+  // most-used colour to the least-used one, choosing the candidate furthest
+  // from that colour's existing blocks so every power reads across the skyline.
+  for (var pass = 0; pass < 60; pass++){
+    var counts = [], c;
+    for (c = 0; c < NZ; c++) counts.push(0);
+    B.forEach(function(b){ counts[b.c]++; });
+    var lo = counts.indexOf(Math.min.apply(null, counts));
+    var hi = counts.indexOf(Math.max.apply(null, counts));
+    if (counts[hi] - counts[lo] <= 1) break;
+    var owned = B.filter(function(b){ return b.c === lo; });
+    var pick = null, far = -1;
+    B.forEach(function(b){
+      if (b.c !== hi) return;
+      var d = owned.length ? Math.min.apply(null, owned.map(function(q){
+        return Math.abs(q.x - b.x) + Math.abs(q.y - b.y);
+      })) : 1e9;
+      if (d > far){ far = d; pick = b; }
+    });
+    if (!pick) break;
+    pick.c = lo;
+  }
+  return B;
+}
+var BLOCKS = cityBlocks();
+
+(function fallbackCity(){          // always drawn; 3D fades in over it
+  var host = document.getElementById("fbBlocks");
+  if (!host) return;
+  var U = 58, ox = 450, oy = 318, STEP = U * .64;
+  BLOCKS.forEach(function(b){
+    el("rect", {
+      x: ox + b.x * U - b.w * U / 2, y: oy - (b.y + 1) * STEP,
+      width: b.w * U, height: b.h * U, rx: 5,
+      fill: BRICK[b.c], stroke:"rgba(255,255,255,.28)", "stroke-width":1.5
+    }, host);
+  });
+  // a strip of beach sand in front of the city, and two trees standing on it
+  el("rect", { x: ox - 260, y: oy - 3, width: 520, height: 17, rx: 8, fill:"#E3BF92" }, host);
+  [-100, 100].forEach(function(dx){
+    el("rect", { x: ox + dx - 3, y: oy - 26, width: 6, height: 30, rx: 3, fill:"#7A5233" }, host);
+    // a paler green than the power-3 blocks, so a tree never reads as a block
+    el("circle", { cx: ox + dx, cy: oy - 34, r: 14, fill:"#9BDB8F" }, host);
+    el("circle", { cx: ox + dx - 10, cy: oy - 25, r: 9, fill:"#6CC07A" }, host);
+    el("circle", { cx: ox + dx + 10, cy: oy - 25, r: 9, fill:"#6CC07A" }, host);
+  });
+})();
+
+(function legend(){
+  var host = document.getElementById("legend");
+  if (!host) return;
+  ZONES.forEach(function(d, i){
+    var s = document.createElement("span");
+    s.innerHTML = '<i style="background:' + d.color + '"></i>' +
+                  (i + 1) + '. ' + d.short;
+    host.appendChild(s);
+  });
+})();
+
+/* ---------------------------------------------------------------
+   3. Reveal on scroll — 60ms stagger, opacity + 14px lift only
+---------------------------------------------------------------- */
+(function reveals(){
+  var items = [].slice.call(document.querySelectorAll(".reveal"));
+  if (REDUCE || !("IntersectionObserver" in window)){
+    items.forEach(function(n){ n.classList.add("shown"); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e, i){
+      if (!e.isIntersecting) return;
+      setTimeout(function(){ e.target.classList.add("shown"); }, i * 60);
+      io.unobserve(e.target);
+    });
+  }, { threshold:.15 });
+  items.forEach(function(n){ io.observe(n); });
+})();
+
+/* ---------------------------------------------------------------
+   0. The Effia-Kwesimintsim header. The scene is complete static SVG —
+   D3 only adds the entrance and the ambient loop on top of it.
+---------------------------------------------------------------- */
+function withD3Skyline(d3){
+  if (d3.select("svg.scene").empty()) return;
+
+  var halo   = d3.select("#sunHalo");
+  var treeL  = d3.select("#treeL");
+  var treeR  = d3.select("#treeR");
+  var flag   = d3.select("#skFlag");
+  var swing  = d3.select("#swing");
+  var canoe  = d3.select("#canoe");
+  var glint  = d3.select("#seaGlint");
+  var cloudA = d3.select("#cloudA");
+  var cloudB = d3.select("#cloudB");
+  var birds  = d3.selectAll("#skBirds > g").nodes();
+
+  if (REDUCE){
+    // no loop to fly them, so park the gulls where the title plate does not cover them
+    [[96, 214, .9], [62, 120, 1.05], [790, 160, .78]].forEach(function(b, i){
+      if (birds[i]) birds[i].setAttribute("transform",
+        "translate(" + b[0] + "," + b[1] + ") scale(" + b[2] + ")");
+    });
+    return;
+  }
+
+  // The depth layers rise into place, back to front. The entrance is rAF-driven
+  // and rAF does not tick in a background tab, so every hidden layer has a
+  // guaranteed way back to visible.
+  var LAYERS = [["#skSun", 0, 34], ["#skFar", 120, 28], ["#skMid", 260, 22],
+                ["#skNear", 400, 14]];
+  function settle(){
+    LAYERS.forEach(function(l){
+      d3.select(l[0]).interrupt()
+        .style("opacity", 1)
+        .attr("transform", null);
+    });
+  }
+
+  if (document.hidden){
+    settle();
+  } else {
+    LAYERS.forEach(function(l){
+      d3.select(l[0])
+        .style("opacity", 0)
+        .attr("transform", "translate(0," + l[2] + ")")
+        .transition().delay(l[1]).duration(1000).ease(d3.easeCubicOut)
+        .style("opacity", 1)
+        .attr("transform", null);
+    });
+    setTimeout(settle, 12000);
+    document.addEventListener("visibilitychange", function(){
+      if (document.hidden) settle();
+    });
+  }
+
+  d3.timer(function(ms){
+    var t = ms / 1000;
+
+    // the evening sun glows; the clouds drift; light glitters on the sea
+    halo.attr("r", (58 + Math.sin(t * .45) * 5).toFixed(1));
+    cloudA.attr("transform", "translate(" + (Math.sin(t * .12) * 16).toFixed(1) + ",0)");
+    cloudB.attr("transform", "translate(" + (Math.sin(t * .1 + 2) * 14).toFixed(1) + ",0)");
+    glint.attr("opacity", (.45 + Math.max(0, Math.sin(t * 1.1)) * .5).toFixed(2));
+
+    // the palms sway in the sea breeze; the flag ripples
+    treeL.attr("transform", "rotate(" + (Math.sin(t * .9) * 1.8).toFixed(2) + " 28 384)");
+    treeR.attr("transform", "rotate(" + (Math.sin(t * .9 + 1.4) * 1.8).toFixed(2) + " 872 384)");
+    flag.attr("transform", "translate(402.6,291) skewY(" + (Math.sin(t * 2.6) * 4).toFixed(2) + ") scale(" +
+              (.94 + Math.abs(Math.sin(t * 1.3)) * .06).toFixed(3) + ",1)");
+
+    // a child swings in the playground; the canoe bobs on the waves
+    swing.attr("transform", "rotate(" + (Math.sin(t * 1.7) * 16).toFixed(1) + " 736 331)");
+    canoe.attr("transform", "translate(" + (Math.sin(t * .35) * 6).toFixed(1) + "," + (Math.sin(t * 1.4) * 1.6).toFixed(1) +
+               ") rotate(" + (Math.sin(t * 1.4 + .6) * 2.2).toFixed(2) + " 262 348)");
+
+    // three gulls arc across; they pass behind the title plate mid-flight
+    birds.forEach(function(n, i){
+      var p = ((t * .05) + i * .3) % 1.5;
+      if (p > 1){ n.setAttribute("opacity", 0); return; }
+      n.setAttribute("opacity", 1);
+      var x = -60 + p * 1020;
+      var y = 236 - Math.sin(p * Math.PI) * 96 + Math.sin(t * 3.2 + i) * 2.5;
+      n.setAttribute("transform",
+        "translate(" + x.toFixed(1) + "," + y.toFixed(1) + ") scale(" + (.78 + i * .2).toFixed(2) + ")");
+    });
+  });
+}
+
+/* ---------------------------------------------------------------
+   4. D3 layer — motion and interaction only.
+---------------------------------------------------------------- */
+function withD3(d3){
+  withD3Skyline(d3);
+
+  var cap = d3.select("#ringCap");
+
+  // spokes draw outward from the child at the centre
+  if (!REDUCE){
+    d3.select("#spokes").selectAll("line")
+      .each(function(){
+        var L = this.getTotalLength();
+        d3.select(this).attr("stroke-dasharray", L + " " + L).attr("stroke-dashoffset", L);
+      });
+    d3.select("#nodes").selectAll(".node-g").style("opacity", 0);
+  }
+  var ringSeen = false;
+  var ringObs = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting || ringSeen) return;
+      ringSeen = true;
+      if (REDUCE) return;
+      d3.select("#spokes").selectAll("line")
+        .transition().delay(function(d, i){ return i * 70; })
+        .duration(520).ease(d3.easeCubicOut)
+        .attr("stroke-dashoffset", 0);
+      d3.select("#nodes").selectAll(".node-g")
+        .transition().delay(function(d, i){ return 160 + i * 70; })
+        .duration(420).ease(d3.easeCubicOut)
+        .style("opacity", 1);
+    });
+  }, { threshold:.2 });
+  var ringEl = document.getElementById("ring");
+  if (ringEl) ringObs.observe(ringEl);
+  // 12s failsafe — force every gated animation to its final state
+  setTimeout(function(){
+    d3.select("#spokes").selectAll("line").attr("stroke-dashoffset", 0);
+    d3.select("#nodes").selectAll(".node-g").style("opacity", 1);
+  }, 12000);
+
+  // hover / focus / tap: lift the power, dim the rest, swap the caption
+  var color = d3.scaleOrdinal()
+    .domain(ZONES.map(function(d){ return d.key; }))
+    .range(ZONES.map(function(d){ return d.color; }));
+
+  function focusKey(key){
+    d3.select("#nodes").selectAll(".node-g")
+      .transition().duration(180).ease(d3.easeCubicOut)
+      .style("opacity", function(){
+        return (!key || this.getAttribute("data-key") === key) ? 1 : .3;
+      });
+    d3.select("#spokes").selectAll("line")
+      .transition().duration(180).ease(d3.easeCubicOut)
+      .attr("stroke-opacity", function(d, i){
+        return (!key || ZONES[i].key === key) ? 1 : .2;
+      })
+      .attr("stroke-width", function(d, i){
+        return (!key || ZONES[i].key === key) ? 7 : 4;
+      });
+    var t = key ? ZONES.filter(function(d){ return d.key === key; })[0] : ZONES[0];
+    cap.html("<b>" + t.title + "</b> " + t.blurb)
+       .style("color", key ? d3.color(color(key)).darker(1.4) : null);
+  }
+
+  ZONES.forEach(function(t){
+    if (!t.g) return;
+    var sel = d3.select(t.g);
+    sel.on("mouseenter focus", function(){ focusKey(t.key); })
+       .on("mouseleave blur",  function(){ focusKey(null); })
+       .on("click", function(){ focusKey(t.key); });
+    if (!REDUCE){
+      sel.on("mouseenter.scale", function(){
+        d3.select(t.circle).transition().duration(200).ease(d3.easeCubicOut).attr("r", NODE_R + 4);
+      }).on("mouseleave.scale", function(){
+        d3.select(t.circle).transition().duration(200).ease(d3.easeCubicOut).attr("r", NODE_R);
+      });
+    }
+  });
+}
+
+/* ---------------------------------------------------------------
+   5. Three.js — the city assembles block by block.
+---------------------------------------------------------------- */
+function withThree(THREE){
+  var canvas = document.getElementById("city3d");
+  var fb = document.getElementById("cityFallback");
+  if (!canvas) return;
+  var W = canvas.clientWidth || 900, H = canvas.clientHeight || 340;
+
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas:canvas, antialias:true, alpha:true });
+  } catch (err) { return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.setSize(W, H, false);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(30, W / H, .1, 100);
+  camera.position.set(0, 2.2, 12);
+  camera.lookAt(0, 1.5, 0);
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x2a1b33, .95));
+  var key = new THREE.DirectionalLight(0xffffff, .85);
+  key.position.set(6, 11, 8);
+  scene.add(key);
+  var rim = new THREE.DirectionalLight(0xf5a9a0, .35);
+  rim.position.set(-7, 4, -6);
+  scene.add(rim);
+
+  var group = new THREE.Group();
+  group.position.y = -1.35;
+  scene.add(group);
+
+  var STEP = .64, parts = [];
+  function track(mesh, edgeMat){
+    parts.push({ mesh:mesh, mat:mesh.material, edge:edgeMat || null, targetY:mesh.position.y });
+  }
+
+  BLOCKS.forEach(function(b){
+    var geo = new THREE.BoxGeometry(b.w, b.h, 1.2);
+    var mat = new THREE.MeshLambertMaterial({ color: BRICK[b.c], transparent:true, opacity:0 });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(b.x, b.y * STEP + b.h / 2, 0);
+    var edges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(geo),
+      new THREE.LineBasicMaterial({ color:0xffffff, transparent:true, opacity:0 })
+    );
+    mesh.add(edges);
+    group.add(mesh);
+    track(mesh, edges.material);
+  });
+
+  // the beach strip out in front of the city
+  var park = new THREE.Mesh(
+    new THREE.BoxGeometry(9, .18, 1.5),
+    new THREE.MeshLambertMaterial({ color:0xe3bf92, transparent:true, opacity:0 })
+  );
+  park.position.set(0, .09, 1.4);
+  group.add(park);
+  track(park);
+
+  // two trees in the park
+  [-1.72, 1.72].forEach(function(tx){
+    var trunk = new THREE.Mesh(
+      new THREE.CylinderGeometry(.06, .08, .44, 8),
+      new THREE.MeshLambertMaterial({ color:0x7a5233, transparent:true, opacity:0 })
+    );
+    trunk.position.set(tx, .4, 1.5);
+    group.add(trunk);
+    track(trunk);
+
+    var crown = new THREE.Mesh(
+      new THREE.SphereGeometry(.3, 18, 14),
+      new THREE.MeshLambertMaterial({ color:0x9bdb8f, transparent:true, opacity:0 })
+    );
+    crown.position.set(tx, .78, 1.5);
+    group.add(crown);
+    track(crown);
+
+    [-.2, .2].forEach(function(px){
+      var puff = new THREE.Mesh(
+        new THREE.SphereGeometry(.19, 14, 10),
+        new THREE.MeshLambertMaterial({ color:0x6cc07a, transparent:true, opacity:0 })
+      );
+      puff.position.set(tx + px, .58, 1.55);
+      group.add(puff);
+      track(puff);
+    });
+  });
+
+  parts.forEach(function(p, i){
+    p.delay = i * 40;
+    p.mesh.position.y = p.targetY + 6;
+  });
+
+  var t0 = null, drag = 0, dragging = false, lastX = 0, spin = 0;
+  var DUR = 520;
+  var ease = function(t){ return 1 - Math.pow(1 - t, 3); };
+
+  function frame(now){
+    if (t0 === null) t0 = now;
+    var e = now - t0;
+    parts.forEach(function(p){
+      var t = Math.min(1, Math.max(0, (e - p.delay) / DUR));
+      var k = ease(t);
+      p.mesh.position.y = p.targetY + 6 * (1 - k);
+      p.mat.opacity = k;
+      if (p.edge) p.edge.opacity = k * .5;
+    });
+    if (!REDUCE) spin += (drag - spin) * .08;
+    group.rotation.y = spin + (REDUCE ? 0 : Math.sin(now / 3400) * .2);
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+
+  var handedOver = false;
+  function handOver(){
+    if (handedOver) return;
+    handedOver = true;
+    canvas.style.transition = "opacity 420ms cubic-bezier(0.23,1,0.32,1)";
+    canvas.style.opacity = 1;
+    if (fb){
+      fb.style.transition = "opacity 420ms cubic-bezier(0.23,1,0.32,1)";
+      fb.style.opacity = 0;
+    }
+  }
+
+  var started = false;
+  function start(){
+    if (started) return;
+    started = true;
+    if (REDUCE){
+      parts.forEach(function(p){
+        p.mesh.position.y = p.targetY;
+        p.mat.opacity = 1;
+        if (p.edge) p.edge.opacity = .5;
+      });
+      renderer.render(scene, camera);
+      handOver();
+      return;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // Hand over while every block is still at opacity 0 (and normally below the
+  // fold), so the flat city never visibly dissolves into an empty 3D scene.
+  if (!REDUCE){
+    renderer.render(scene, camera);
+    handOver();
+  }
+
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ io.unobserve(e.target); start(); } });
+    }, { threshold:.3 });
+    io.observe(canvas);
+    setTimeout(start, 12000);
+  } else start();
+
+  // drag to turn the city — a spring-ish follow, not a 1:1 tie to the pointer
+  canvas.style.touchAction = "pan-y";
+  canvas.addEventListener("pointerdown", function(ev){
+    dragging = true; lastX = ev.clientX; canvas.setPointerCapture(ev.pointerId);
+  });
+  canvas.addEventListener("pointermove", function(ev){
+    if (!dragging) return;
+    drag += (ev.clientX - lastX) * .008;
+    lastX = ev.clientX;
+  });
+  ["pointerup", "pointercancel"].forEach(function(t){
+    canvas.addEventListener(t, function(){ dragging = false; });
+  });
+
+  addEventListener("resize", function(){
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false);
+  });
+}
+
+/* ---------------------------------------------------------------
+   6. Fit the fixed 900px poster to the viewport
+---------------------------------------------------------------- */
+(function fit(){
+  var wrap = document.getElementById("fit");
+  if (!wrap) return;
+  // zoom rather than transform:scale because zoom reflows layout, so the
+  // wrapper's height is correct by construction
+  function apply(){
+    var w = document.documentElement.clientWidth;
+    if (!w) return;
+    wrap.style.zoom = w / 900;
+  }
+  apply();
+  addEventListener("resize", apply);
+})();
+
+try { if (window.d3) withD3(window.d3); } catch (e) { /* poster stands on its own */ }
+try { if (window.THREE) withThree(window.THREE); } catch (e) { /* flat city stays */ }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Effia-Kwesimintsim's Big Plan — Pamphlet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2A1B33;--ink-2:#56445F;--ink-3:#85748D;--cream:#FBF4EE;--cream-2:#FFFAF6;--haze:#F4E3EA;--skywash:#E3EEF3;
+--lagoon:#6B3FA0;--lagoon-deep:#55308A;--coral:#E2574C;--marigold:#F0A23A;--sun:#FFC94D;--night:#3D1F57}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;background:#8a8a8a}
+@page{ size:297mm 210mm; margin:0 }
+.sheet{ width:297mm; height:210mm; display:grid; grid-template-columns:repeat(3,99mm);
+        background:var(--cream); overflow:hidden; position:relative; page-break-after:always }
+.sheet:last-child{ page-break-after:auto }
+.panel{ width:99mm; height:210mm; padding:11mm 9mm 13mm; overflow:hidden; position:relative;
+        display:flex; flex-direction:column }
+.panel + .panel{ border-left:.2mm dashed rgba(42,27,51,.3) }
+h2.t{ font-size:16pt; font-weight:800; letter-spacing:-.3pt; line-height:1.1; margin:0 0 3mm }
+.kick{ font-size:7.4pt; font-weight:800; letter-spacing:1.6pt; text-transform:uppercase; color:var(--lagoon); margin:0 0 2mm }
+p{ margin:0 0 3mm; font-size:9.2pt; line-height:1.5; color:var(--ink-2) }
+b{ color:var(--ink) }
+.small{ font-size:7.8pt; line-height:1.45; color:var(--ink-3) }
+.cover{ padding:0; background:var(--cream) }
+.cover .sky{ width:99mm; height:44mm; display:block }
+.cover .body{ flex:1; padding:0 9mm 13mm; display:flex; flex-direction:column; background:var(--cream) }
+.sign{ background:var(--night); border-radius:2.6mm; padding:6mm 5mm 6.5mm; text-align:center;
+       box-shadow:0 1.6mm 0 rgba(0,0,0,.14); margin-top:-3.5mm; position:relative; z-index:2 }
+.sign h1{ margin:0; color:#fff; font-size:19pt; font-weight:800; line-height:1.0; letter-spacing:-.8pt }
+.sign p{ margin:2.6mm 0 0; color:#FFD27A; font-size:8pt; font-weight:600; letter-spacing:1pt; text-transform:uppercase; line-height:1.4 }
+.hook{ margin-top:5mm; font-size:10.5pt; line-height:1.45; color:var(--ink-2); text-align:center }
+.hook b{ color:var(--ink) }
+.teaser{ margin-top:5mm; background:#fff; border-radius:2.6mm; padding:4mm 5mm; box-shadow:0 .8mm 0 rgba(42,27,51,.1) }
+.teaser h4{ margin:0 0 2.2mm; font-size:8pt; font-weight:800; letter-spacing:1.1pt; text-transform:uppercase; color:var(--lagoon-deep); text-align:center }
+.teaser div{ display:flex; align-items:center; gap:2.6mm; font-size:8.4pt; font-weight:600; color:var(--ink-2); margin-bottom:1.5mm }
+.teaser div:last-child{ margin-bottom:0 }
+.teaser i{ width:2.8mm; height:2.8mm; border-radius:50%; display:block; flex:0 0 2.8mm }
+.coverfoot{ margin-top:auto; display:flex; align-items:center; gap:4mm; justify-content:center }
+.coverfoot img{ width:23mm; height:22mm; object-fit:contain }
+.coverfoot span{ font-size:7pt; font-weight:800; letter-spacing:1pt; color:var(--lagoon-deep); line-height:1.35 }
+.card{ background:#fff; border-radius:2.6mm; padding:4.2mm 4.4mm; box-shadow:0 .8mm 0 rgba(42,27,51,.1); margin-bottom:3.6mm }
+.card h3{ margin:0 0 1.6mm; font-size:10.5pt; font-weight:800; line-height:1.15 }
+.card p{ margin:0; font-size:8.8pt; line-height:1.45; color:var(--ink-3) }
+.row{ display:flex; gap:3.4mm; align-items:flex-start; margin-bottom:3.4mm }
+.row.mid{ align-items:center }
+.disc{ flex:0 0 8.4mm; width:8.4mm; height:8.4mm; border-radius:50%; display:grid; place-items:center; color:#fff }
+.row h4{ margin:.4mm 0 .9mm; font-size:9.4pt; font-weight:700; line-height:1.2 }
+.row.mid h4{ margin:0 }
+.row p{ margin:0; font-size:8.4pt; line-height:1.42; color:var(--ink-3) }
+.zone{ margin-bottom:5mm }
+.zhead{ display:flex; align-items:center; gap:3mm; margin-bottom:2.4mm }
+.znum{ flex:0 0 9mm; width:9mm; height:9mm; border-radius:2.6mm; display:grid; place-items:center; color:#fff; font-size:13pt; font-weight:800 }
+.zdisc{ flex:0 0 9mm; width:9mm; height:9mm; border-radius:50%; display:grid; place-items:center; color:#fff }
+.zt h3{ margin:0; font-size:11.5pt; font-weight:800; line-height:1.08; letter-spacing:-.2pt }
+.zt span{ font-size:6.6pt; font-weight:800; letter-spacing:1.1pt; text-transform:uppercase }
+.zlede{ font-size:9pt; font-weight:600; color:var(--ink-2); margin:0 0 2.4mm }
+ul.acts{ margin:0; padding:0; list-style:none }
+ul.acts li{ font-size:8.4pt; line-height:1.42; color:var(--ink-3); padding-left:4.6mm; position:relative; margin-bottom:1.8mm }
+ul.acts li::before{ content:""; position:absolute; left:0; top:1.6mm; width:2.1mm; height:2.1mm; border-radius:50%; background:currentColor; opacity:.55 }
+ul.acts li b{ color:var(--ink-2) }
+ul.acts li i{ font-style:normal; font-weight:700; color:var(--ink-2) }
+.back{ background:var(--haze) }
+.logos{ background:#fff; border-radius:2.6mm; padding:5mm 4mm; display:grid; grid-template-columns:1fr 1fr;
+        gap:5mm 3mm; place-items:center; margin-bottom:4mm }
+.logos img{ max-width:100%; max-height:13mm; object-fit:contain; display:block }
+.logos img.wide{ max-height:8.5mm }
+.ack{ font-size:6.6pt; line-height:1.45; color:var(--ink-3); margin:0 0 4mm; text-align:justify }
+.srcbox{ border-top:.3mm solid rgba(42,27,51,.2); padding-top:3mm; margin-top:auto }
+.dreams{ display:grid; grid-template-columns:repeat(3,1fr); gap:2.2mm }
+.pring{ width:76mm; height:auto; display:block; margin:1mm auto 4mm }
+.goal{ background:#fff; border-radius:2.4mm; padding:2.2mm 1.2mm 2.3mm; text-align:center; box-shadow:0 .8mm 0 rgba(42,27,51,.1) }
+.goal .gd{ width:6.4mm; height:6.4mm; border-radius:50%; display:grid; place-items:center; color:#fff; margin:0 auto 1.4mm }
+.goal b{ display:block; font-size:8pt; font-weight:700; line-height:1.15 }
+.goal span{ display:block; font-size:6.3pt; line-height:1.28; color:var(--ink-3); margin-top:.6mm }
+.facts{ display:grid; grid-template-columns:1fr 1fr; gap:3mm; margin-bottom:4mm }
+.fact{ background:#fff; border-radius:2.4mm; padding:3mm 2mm; text-align:center; box-shadow:0 .8mm 0 rgba(42,27,51,.1) }
+.fact .n{ font-size:21pt; font-weight:800; line-height:.95; letter-spacing:-.8pt }
+.fact .l{ margin-top:1.2mm; font-size:6.6pt; font-weight:700; letter-spacing:.6pt; text-transform:uppercase; color:var(--coral); line-height:1.25 }
+.team{ display:flex; flex-wrap:wrap; gap:1.8mm; margin-top:1mm }
+.chip{ display:flex; align-items:center; gap:1.6mm; background:#fff; border-radius:99mm; padding:1mm 2.8mm 1mm 1mm;
+       box-shadow:0 .6mm 0 rgba(42,27,51,.09); font-size:7.6pt; font-weight:700; color:var(--ink) }
+.chip i{ width:5.6mm; height:5.6mm; border-radius:50%; display:grid; place-items:center; color:#fff }
+.cheer{ background:var(--coral); color:#fff; border-radius:2.6mm; padding:4mm 5mm; text-align:center; margin-bottom:3.6mm }
+.cheer h3{ margin:0 0 1.2mm; font-size:11pt; font-weight:800; line-height:1.15; color:#fff }
+.cheer p{ margin:0; font-size:8.4pt; line-height:1.4; font-weight:600; color:#FFE0DA }
+.bigidea{ background:var(--lagoon); color:#fff; border-radius:2.6mm; padding:5mm; margin-top:auto }
+.bigidea p{ color:#E9DFF5; font-size:8.8pt; margin:0; line-height:1.5 }
+.bigidea b{ color:var(--sun) }
+.panelnum{ position:absolute; bottom:4.5mm; left:0; right:0; text-align:center;
+           font-size:6pt; font-weight:700; letter-spacing:1pt; text-transform:uppercase; color:rgba(42,27,51,.34) }
+.panel.spread{ justify-content:space-between }
+.panel.spread .zone{ margin-bottom:0 }
+.panel.tight .row{ margin-bottom:2.5mm }
+.panel.tight h2.t{ margin-bottom:2.3mm }
+.panel.tight .card{ margin-bottom:2.6mm; padding:3.6mm 4.2mm }
+.panel.tight .card p{ font-size:8.5pt; line-height:1.42 }
+.panel.last .zone{ margin-bottom:3.6mm }
+.panel.last .card,.panel.last .cheer{ margin-bottom:3mm }
+@media screen{ body{ padding:8mm } .sheet{ box-shadow:0 0 6mm rgba(0,0,0,.35) } .sheet + .sheet{ margin-top:8mm } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-heart" transform="translate(0 -1)"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></g>
+  <g id="i-child"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20.5c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2"/></g>
+  <g id="i-family"><circle cx="8" cy="7.6" r="2.8"/><circle cx="16.6" cy="9" r="2.2"/><path d="M3.4 19.6c0-2.9 2.1-5 4.6-5s4.6 2.1 4.6 5"/><path d="M14 19.6c0-2.3 1.2-3.9 2.9-3.9s2.9 1.6 2.9 3.9"/></g>
+  <g id="i-people"><circle cx="12" cy="6.6" r="2.6"/><circle cx="5" cy="10.4" r="2.2"/><circle cx="19" cy="10.4" r="2.2"/><path d="M7.4 18.4c0-2.6 2-4.5 4.6-4.5s4.6 1.9 4.6 4.5"/><path d="M2 19.6c0-2.1 1.4-3.6 3.2-3.6"/><path d="M22 19.6c0-2.1-1.4-3.6-3.2-3.6"/></g>
+  <g id="i-gov"><path d="M3.5 9.6 12 4.4l8.5 5.2"/><path d="M5.5 10.6V18M10 10.6V18M14 10.6V18M18.5 10.6V18"/><path d="M3.5 20.6h17"/></g>
+  <g id="i-teacher"><path d="M3 8.4 12 4.2l9 4.2-9 4.2Z"/><path d="M7 10.6v4.6c0 1.6 2.4 2.8 5 2.8s5-1.2 5-2.8v-4.6"/><path d="M21 8.4V14"/></g>
+  <g id="i-stetho"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.4M14 3h1.6"/><path d="M10 12v2.6a4.4 4.4 0 0 0 8.8 0V13"/><circle cx="18.8" cy="11" r="2"/></g>
+  <g id="i-house"><path d="M4 11.2 12 4l8 7.2"/><path d="M6 10.5V20h12v-9.5"/><path d="M10 20v-5h4v5"/></g>
+  <g id="i-shield"><path d="M12 3.2 19 6v5.5c0 4.4-3 7.4-7 9.3-4-1.9-7-4.9-7-9.3V6Z"/><path d="m9.2 12.1 2 2 3.6-3.9"/></g>
+  <g id="i-hands"><path d="M12 20.4S4.5 16 4.5 10.6A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7.5 2c0 5.4-7.5 9.8-7.5 9.8Z"/><path d="M12 8.6v11.8"/></g>
+  <g id="i-mic"><rect x="9.2" y="3" width="5.6" height="10.4" rx="2.8"/><path d="M5.6 11.6a6.4 6.4 0 0 0 12.8 0"/><path d="M12 18v3M8.8 21h6.4"/></g>
+  <g id="i-bowl"><path d="M4 12h16a8 8 0 0 1-16 0Z"/><path d="M3 20h18"/><path d="M9 8c0-1.5 1-2 1-3.2S9 3 9 3"/><path d="M14 8c0-1.5 1-2 1-3.2S14 3 14 3"/></g>
+  <g id="i-coin"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4v9.2"/><path d="M14.6 9.6c-.6-.8-1.6-1.2-2.7-1.2-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.8.4 2.9 1 2.9 2.2s-1.2 2-2.8 2c-1.2 0-2.2-.4-2.8-1.2"/></g>
+  <g id="i-map"><path d="M9.4 4.2 3.6 6.4v13.4l5.8-2.2 5.2 2.2 5.8-2.2V4.2l-5.8 2.2Z"/><path d="M9.4 4.2v13.4M14.6 6.4v13.4"/></g>
+  <g id="i-whistle"><path d="M3.4 11.4h9.2l3.4-3.4v9.2l-3.4-3.4H3.4z"/><circle cx="18.4" cy="12" r="2.6"/><path d="M6.2 14.6V18"/></g>
+  <g id="i-tree"><path d="M12 21v-3.6"/><path d="M12 3.4 6.2 12h11.6Z"/><path d="M12 8.6 4.8 17.6h14.4Z"/><path d="M8.6 21h6.8"/></g>
+  <g id="i-access"><circle cx="12" cy="4.2" r="2"/><path d="M9.6 8.4h4.8"/><path d="M12 8.4v6h4.4l2.2 6.2"/><circle cx="11" cy="16.6" r="4.4"/></g>
+  <g id="i-briefcase"><rect x="3" y="7.4" width="18" height="12.6" rx="2.2"/><path d="M9 7.4V5.6a1.8 1.8 0 0 1 1.8-1.8h2.4A1.8 1.8 0 0 1 15 5.6v1.8"/><path d="M3 12.6h18"/></g>
+  <g id="i-sprout"><path d="M12 21v-7.4"/><path d="M12 13.6C12 9.8 9.4 7.4 5.4 7.4c0 4 2.6 6.2 6.6 6.2Z"/><path d="M12 13.6c0-4.6 2.6-7.2 6.6-7.2 0 4.6-2.6 7.2-6.6 7.2Z"/><path d="M8.4 21h7.2"/></g>
+  <g id="i-chat"><path d="M4 5.4h16v10.4h-8.6L7 19.6v-3.8H4Z"/><path d="M8 9.4h8M8 12.2h5"/></g>
+  <g id="i-crown"><path d="M4 17.4 3 7.6l5 3.8L12 5l4 6.4 5-3.8-1 9.8Z"/><path d="M4.4 20.4h15.2"/></g>
+  <g id="i-check"><rect x="5" y="4.6" width="14" height="16.4" rx="2"/><path d="M9 4.6V3h6v1.6"/><path d="m8.6 13 2.4 2.4 4.6-4.8"/></g>
+  <g id="i-eye"><path d="M2.6 12S6.2 5.6 12 5.6 21.4 12 21.4 12 17.8 18.4 12 18.4 2.6 12 2.6 12Z"/><circle cx="12" cy="12" r="3"/></g>
+  <g id="i-radio"><rect x="3" y="8.4" width="18" height="12" rx="2.4"/><path d="m6.4 8.4 10-5"/><circle cx="15.6" cy="14.4" r="2.8"/><path d="M6.6 12.6h3.6M6.6 16.2h3.6"/></g>
+  <!-- added for Builsa North -->
+  <g id="i-star"><path d="m12 3.4 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z"/></g>
+  <g id="i-book"><path d="M12 6.6C10 5.1 7.2 4.6 3.6 4.8v13.6c3.6-.2 6.4.3 8.4 1.8 2-1.5 4.8-2 8.4-1.8V4.8c-3.6-.2-6.4.3-8.4 1.8Z"/><path d="M12 6.6v13.6"/></g>
+  <g id="i-ball"><circle cx="12" cy="12" r="8.4"/><path d="M3.9 10c3.6.9 6.6 3.6 7.8 10.3"/><path d="M20.1 14c-3.6-.9-6.6-3.6-7.8-10.3"/></g>
+  <g id="i-baby"><circle cx="12" cy="12.6" r="7.8"/><path d="M9.3 15.2c1.6 1.3 3.8 1.3 5.4 0"/><path d="M9.4 11.2h.01M14.6 11.2h.01" stroke-width="2.6"/><path d="M12 4.8c-1.8-.2-2.6 1.6-1.2 2.6"/></g>
+  <g id="i-blocks"><rect x="3.4" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="13" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="8.2" y="3.6" width="7.6" height="7.6" rx="1.4"/></g>
+  <g id="i-bag"><rect x="5" y="7.6" width="14" height="13" rx="3.2"/><path d="M9 7.6V6.2a3 3 0 0 1 6 0v1.4"/><path d="M8.6 13.6h6.8v3.6H8.6Z"/></g>
+  <g id="i-solar"><path d="M5.4 4.4h13.2l2.2 9H3.2Z"/><path d="M4.3 8.9h15.4M9.8 4.4l-.6 9M14.2 4.4l.6 9"/><path d="M12 13.4v5.2M8.2 20.6h7.6"/></g>
+  <g id="i-pot"><path d="M4.6 10.6h14.8v5.2a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4Z"/><path d="M2.6 10.6h18.8"/><path d="M9.2 7.4c0-1.4 1-1.8 1-3.2M13.8 7.4c0-1.4 1-1.8 1-3.2"/></g>
+  <symbol id="epic-mark" viewBox="0 0 24 24"><path d="M12 2 2 12l10 10 10-10Z"/></symbol>
+</defs></svg>
+<div class="sheet"><div class="panel tight"><p class="kick">First, two big words</p><h2 class="t">Who makes the plan?</h2><div class="card"><h3>A District Assembly</h3><p>Imagine your neighbourhood as a huge team — the District Assembly is the coaches and leaders of that team. They fix roads, build schools, keep streets clean and keep everyone safe.</p></div><div class="card"><h3>A District Plan</h3><p>A giant map made by local leaders to make a town a much better place to live. It lists the biggest problems, then writes a step-by-step checklist for fixing them.</p></div><p class="kick" style="margin-top:1.4mm">Our big dream</p><h2 class="t" style="font-size:13pt">A community where EVERY child…</h2><div class="row"><div class="disc" style="background:#EC5F8D"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div><div><h4>Plays, laughs and learns</h4><p>In a safe and friendly space.</p></div></div><div class="row"><div class="disc" style="background:#1E9AB0"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div><div><h4>Can easily join in all the fun</h4><p>Including children with disabilities.</p></div></div><div class="row"><div class="disc" style="background:#3FA66B"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div><div><h4>Is loved, protected and kept safe</h4><p>From all harm, at home and in the community.</p></div></div><div class="card" style="margin-top:auto;background:var(--cream-2)"><p style="font-size:8.6pt">Every child in Effia-Kwesimintsim deserves to grow up happy, safe and ready to learn — <b>no matter who they are or where they live!</b></p></div><p class="kick">So every child grows up…</p><div class="dreams"><div class="goal"><div class="gd" style="background:#EC5F8D"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></div><b>Happy</b><span>play &amp; friends</span></div><div class="goal"><div class="gd" style="background:#3FA66B"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div><b>Safe</b><span>at home &amp; school</span></div><div class="goal"><div class="gd" style="background:#6B3FA0"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></div><b>Ready to learn</b><span>open doors</span></div></div><div class="panelnum">Inside flap</div></div><div class="panel back"><p class="kick">Working together</p><h2 class="t">Our partners</h2><div class="logos"><img class="wide" src="ucl.png" alt="UCL"><img class="wide" src="nihr.png" alt="NIHR"><img src="logo_flacso.png" alt="FLACSO Argentina"><img class="wide" src="clcd-ghana-logo.jpeg" alt="CLCD — Center for Learning and Childhood Development"></div><p class="ack">This research was funded by the National Institute for Health and Care Research (NIHR) [NIHR158910] using UK international development funding from the UK Government to support global health research. The views expressed in this publication are those of the author(s) and not necessarily those of the NIHR or the UK government.</p><p class="kick" style="margin-top:2mm">Your turn</p><h2 class="t" style="font-size:13pt">What can you do?</h2><div class="row mid"><div class="disc" style="background:#1E9AB0"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></div><div><h4>Invite every kid to play with you</h4></div></div><div class="row mid"><div class="disc" style="background:#EC5F8D"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div><div><h4>Come to play dates and make new friends</h4></div></div><div class="row mid"><div class="disc" style="background:#3FA66B"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div><div><h4>Tell a grown-up you trust if you ever feel unsafe</h4></div></div><div class="srcbox"><p class="small"><b>Source:</b> Effia-Kwesimintsim Municipal Assembly (EKMA) District Plan (Western Region) — child-friendly summary, prepared for the EPIC Project.</p><p class="small" style="margin:0">Three super powers so every child in Effia-Kwesimintsim grows up happy, safe and ready to learn.</p></div><div class="panelnum">Back cover</div></div><div class="panel cover"><svg class="sky" viewBox="0 -9 900 400" preserveAspectRatio="xMidYMax slice"
+       role="img" aria-label="Effia-Kwesimintsim at dusk by the sea — coconut palms, homes, a church and a mosque, a school with a ramp and the Ghana flag, the Municipal Assembly, a playground swing, a fishing canoe and the harbour cranes of Takoradi">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#CDB9E6"/><stop offset=".5" stop-color="#EBC3D6"/>
+        <stop offset=".8" stop-color="#F9CDB6"/><stop offset="1" stop-color="#FBD9A6"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset=".45" stop-color="#FFC48A" stop-opacity=".85"/>
+        <stop offset="1" stop-color="#FFC48A" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#9C8CC8"/><stop offset="1" stop-color="#6E6AAE"/>
+      </linearGradient>
+    </defs>
+
+    <!-- print covers are taller than the web header, so the afternoon sky carries on upward -->
+    <rect x="0" y="-9" width="900" height="10" fill="#CDB9E6"/>
+    <rect width="900" height="390" fill="url(#skyGrad)"/>
+
+    <!-- the evening sun, sinking toward the sea to the right of the title -->
+    <g id="skSun">
+      <circle id="sunHalo" cx="806" cy="246" r="58" fill="url(#sunGlow)"/>
+      <circle cx="806" cy="246" r="32" fill="#FFB35C"/>
+    </g>
+
+    <!-- thin streaks of sunset cloud -->
+    <g id="skClouds" fill="#fff" opacity=".6">
+      <g id="cloudA"><rect x="20" y="172" width="96" height="6" rx="3"/><rect x="52" y="182" width="70" height="5" rx="2.5"/></g>
+      <g id="cloudB"><rect x="770" y="118" width="104" height="6" rx="3"/><rect x="796" y="128" width="64" height="5" rx="2.5"/></g>
+    </g>
+
+    <!-- gulls cross the sky; the title plate hides the middle of the pass -->
+    <g id="skBirds" fill="none" stroke="#3D2350" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(96,200) scale(0.9)"><path d="M0 0q6-6 12 0q6-6 12 0"/></g><g transform="translate(760,214) scale(1.05)"><path d="M0 0q6-6 12 0q6-6 12 0"/></g><g transform="translate(724,120) scale(0.78)"><path d="M0 0q6-6 12 0q6-6 12 0"/></g></g>
+
+    <!-- the Atlantic, with Takoradi harbour on the far shore and a band of beach sand -->
+    <g id="skFar">
+      <rect x="0" y="298" width="900" height="86" fill="url(#seaGrad)"/>
+      <rect x="0" y="298" width="900" height="2.5" fill="#C9BCEA"/>
+      <g fill="#8576B4">
+        <!-- a ship at anchor and two harbour cranes -->
+        <path d="M84 298l7-11h74l-5 11Z"/><rect x="134" y="276" width="18" height="11"/><rect x="140" y="268" width="5" height="8"/>
+        <rect x="182" y="232" width="5" height="66"/><path d="M170 238h62v4h-62Z"/><path d="M226 242v20" stroke="#8576B4" stroke-width="1.6"/>
+        <rect x="246" y="246" width="5" height="52"/><path d="M236 250h52v4h-52Z"/><path d="M284 254v16" stroke="#8576B4" stroke-width="1.6"/>
+      </g>
+      <!-- sunlight glittering on the water under the sun -->
+      <g id="seaGlint" fill="#FFD9A6" opacity=".8">
+        <rect x="778" y="305" width="56" height="2.6" rx="1.3"/><rect x="788" y="313" width="38" height="2.4" rx="1.2"/>
+        <rect x="770" y="322" width="46" height="2.4" rx="1.2"/><rect x="796" y="331" width="30" height="2.2" rx="1.1"/>
+        <rect x="60" y="318" width="34" height="2" rx="1"/><rect x="420" y="312" width="40" height="2" rx="1"/><rect x="540" y="326" width="28" height="2" rx="1"/>
+      </g>
+      <path fill="#EBC9A4" d="M0 366C80 360 170 364 260 368S420 372 520 366 720 360 800 366 870 370 900 366V384H0Z"/>
+    </g>
+
+    <!-- Original silhouettes of a Kwesimintsim street by the sea, drawn for this
+         poster standing on y=384. The warm #FFE1B8 shapes are lit windows. -->
+    <g id="skMid">
+      <!-- a fishing canoe out on the water, bobbing -->
+      <g id="canoe" fill="#3D2350">
+        <path d="M232 346q30 10 60 0l-4 6q-26 9-52 0Z"/>
+        <circle cx="258" cy="330" r="3.4"/><rect x="256" y="333.5" width="4" height="12" rx="1.5"/>
+        <path d="M262 336 276 350" fill="none" stroke="#3D2350" stroke-width="2" stroke-linecap="round"/>
+        <path d="M274 345v-17l9 4-9 4" />
+      </g>
+      <g id="skMidGeom" fill="#3D2350">
+        <!-- a coconut palm at the western edge -->
+        <g id="treeL">
+          <path d="M28 384C33 352 39 322 50 292" fill="none" stroke="#3D2350" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50 290Q28 276 6 292Q30 282 50 293Z"/><path d="M50 290Q40 268 20 262Q42 272 51 290Z"/>
+          <path d="M50 290Q58 266 78 262Q60 274 51 291Z"/><path d="M50 290Q74 278 94 294Q72 284 50 293Z"/>
+          <path d="M50 290Q52 270 48 254Q56 270 52 290Z"/>
+          <circle cx="47" cy="295" r="3.2"/><circle cx="54" cy="296" r="3.2"/>
+        </g>
+        <!-- a family home with a pitched tin roof -->
+        <rect x="98" y="346" width="46" height="38"/><path d="M92 348 121 324 150 348Z"/>
+        <rect x="106" y="356" width="10" height="10" fill="#FFE1B8"/><path d="M126 384v-16h10v16Z" fill="#FFE1B8"/>
+        <!-- a church with its steeple -->
+        <rect x="164" y="330" width="52" height="54"/><path d="M158 332 190 306 222 332Z"/>
+        <rect x="183" y="284" width="14" height="26"/><path d="M181 286 190 262 199 286Z"/>
+        <rect x="189" y="250" width="2" height="13"/><rect x="185" y="254" width="10" height="2"/>
+        <circle cx="190" cy="320" r="4" fill="#FFE1B8"/>
+        <path d="M184 384v-16a6 6 0 0 1 12 0v16Z" fill="#FFE1B8"/>
+        <!-- the school, with a ramp up to its door and its flagpole -->
+        <rect x="304" y="346" width="84" height="38"/><path d="M298 348 314 332H378L394 348Z"/>
+        <rect x="311" y="354" width="10" height="11" fill="#FFE1B8"/><rect x="327" y="354" width="10" height="11" fill="#FFE1B8"/>
+        <rect x="355" y="354" width="10" height="11" fill="#FFE1B8"/><rect x="371" y="354" width="10" height="11" fill="#FFE1B8"/>
+        <path d="M340 384v-15a6 6 0 0 1 12 0v15Z" fill="#FFE1B8"/>
+        <path d="M352 384H380L352 377Z" fill="#6E5A86"/>
+        <rect x="400" y="290" width="2.6" height="94"/>
+        <!-- Effia-Kwesimintsim Municipal Assembly: two storeys under a pediment -->
+        <rect x="420" y="326" width="144" height="58"/><rect x="414" y="320" width="156" height="7"/>
+        <path d="M460 320 492 300 524 320Z"/>
+        <rect x="430" y="334" width="11" height="13" fill="#FFE1B8"/><rect x="448" y="334" width="11" height="13" fill="#FFE1B8"/>
+        <rect x="525" y="334" width="11" height="13" fill="#FFE1B8"/><rect x="543" y="334" width="11" height="13" fill="#FFE1B8"/>
+        <rect x="430" y="356" width="11" height="13" fill="#FFE1B8"/><rect x="448" y="356" width="11" height="13" fill="#FFE1B8"/>
+        <rect x="525" y="356" width="11" height="13" fill="#FFE1B8"/><rect x="543" y="356" width="11" height="13" fill="#FFE1B8"/>
+        <path d="M474 384v-44h36v44Z" fill="#FFE1B8"/><rect x="482" y="340" width="3" height="44"/><rect x="499" y="340" width="3" height="44"/>
+        <circle cx="492" cy="311" r="4.5" fill="#FFE1B8"/>
+        <!-- a mosque: dome and minaret -->
+        <rect x="604" y="340" width="64" height="44"/><path d="M614 341a22 22 0 0 1 44 0Z"/>
+        <rect x="635" y="310" width="2" height="10"/><circle cx="636" cy="308" r="2.6"/>
+        <rect x="672" y="296" width="10" height="88"/><path d="M670 298 677 282 684 298Z"/>
+        <rect x="674" y="310" width="6" height="7" fill="#FFE1B8"/>
+        <path d="M630 384v-14a6 6 0 0 1 12 0v14Z" fill="#FFE1B8"/>
+        <!-- the playground: a swing frame (the swing itself moves) -->
+        <path d="M702 384 714 330 726 384M770 384 758 330 746 384" fill="none" stroke="#3D2350" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="710" y="327" width="52" height="4.4" rx="2"/>
+        <!-- a home at the eastern end -->
+        <rect x="798" y="350" width="40" height="34"/><path d="M792 352 818 330 844 352Z"/>
+        <rect x="806" y="358" width="9" height="9" fill="#FFE1B8"/><path d="M822 384v-14h9v14Z" fill="#FFE1B8"/>
+        <!-- a coconut palm at the eastern edge -->
+        <g id="treeR"><g transform="translate(900,0) scale(-1,1)">
+          <path d="M28 384C33 352 39 322 50 292" fill="none" stroke="#3D2350" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50 290Q28 276 6 292Q30 282 50 293Z"/><path d="M50 290Q40 268 20 262Q42 272 51 290Z"/>
+          <path d="M50 290Q58 266 78 262Q60 274 51 291Z"/><path d="M50 290Q74 278 94 294Q72 284 50 293Z"/>
+          <path d="M50 290Q52 270 48 254Q56 270 52 290Z"/>
+          <circle cx="47" cy="295" r="3.2"/><circle cx="54" cy="296" r="3.2"/>
+        </g></g>
+      </g>
+      <!-- a child on the swing -->
+      <g id="swing" fill="#3D2350">
+        <path d="M729 331v33M743 331v33" fill="none" stroke="#3D2350" stroke-width="1.6"/>
+        <rect x="724" y="363" width="24" height="3.4" rx="1.5"/>
+        <circle cx="736" cy="346" r="4.6"/><path d="M732 352h8l1 11h-10Z"/>
+        <path d="M733 363l-3 9M739 363l4 8" fill="none" stroke="#3D2350" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+      <!-- Ghana's flag over the school -->
+      <g id="skFlag" transform="translate(402.6,291)">
+        <rect width="26" height="5.4" fill="#CE1126"/><rect y="5.4" width="26" height="5.4" fill="#FCD116"/><rect y="10.8" width="26" height="5.4" fill="#006B3F"/>
+        <path d="m13 5.9 1 2.1 2.3.2-1.7 1.5.5 2.2-2.1-1.2-2.1 1.2.5-2.2-1.7-1.5 2.3-.2Z" fill="#000"/>
+      </g>
+    </g>
+
+    <g id="skNear" fill="#2A1B33"><rect x="0" y="384" width="900" height="7"/></g>
+  </svg><div class="body"><div class="sign"><h1>Effia-<br>Kwesimintsim's<br>Big Plan</h1><p>For our little<br>superstars!</p></div><p class="hook">Who decides how the play spaces, schools and helpers in your town get better — and how can <b>you</b> help?</p><div class="teaser"><h4>Inside: 3 Super Powers</h4><div><i style="background:#EC5F8D"></i>Happy Playtime &amp; Supportive Families</div><div><i style="background:#1E9AB0"></i>Open Doors for Everyone</div><div><i style="background:#3FA66B"></i>Safe Shield &amp; Helper Teams</div></div><div class="coverfoot"><img src="epic-logo-2.svg" alt="EPIC"><span>CHILD-FRIENDLY<br>EDITION</span></div></div><div class="panelnum">Front cover</div></div></div>
+<div class="sheet"><div class="panel"><p class="kick">Understanding the plan</p><h2 class="t">Our 3 Super Powers</h2><p>Effia-Kwesimintsim's leaders are focusing on three priority areas — every one points back at the same thing: <b>every child in Effia-Kwesimintsim</b>.</p><svg viewBox="0 36 450 316" class="pring" role="img" aria-label="Three Super Powers arranged around every child in Effia-Kwesimintsim"><circle cx="225" cy="215" r="128" fill="none" stroke="#B9A6D6" stroke-width="2.5" stroke-dasharray="4 10" stroke-linecap="round"/><line x1="225.0" y1="157.0" x2="225.0" y2="136.0" stroke="#EC5F8D" stroke-width="5" stroke-linecap="round" stroke-opacity=".6"/><line x1="275.2" y1="244.0" x2="293.4" y2="254.5" stroke="#1E9AB0" stroke-width="5" stroke-linecap="round" stroke-opacity=".6"/><line x1="174.8" y1="244.0" x2="156.6" y2="254.5" stroke="#3FA66B" stroke-width="5" stroke-linecap="round" stroke-opacity=".6"/><circle cx="225.0" cy="87.0" r="45" fill="#fff"/><circle cx="225.0" cy="87.0" r="40" fill="#EC5F8D"/><g transform="translate(208.8,70.8) scale(1.35)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></g><circle cx="253.8" cy="58.2" r="13" fill="#fff"/><text x="253.8" y="63.7" text-anchor="middle" font-size="16" font-weight="800" fill="#C94170">1</text><circle cx="335.9" cy="279.0" r="45" fill="#fff"/><circle cx="335.9" cy="279.0" r="40" fill="#1E9AB0"/><g transform="translate(319.7,262.8) scale(1.35)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></g><circle cx="364.7" cy="250.2" r="13" fill="#fff"/><text x="364.7" y="255.7" text-anchor="middle" font-size="16" font-weight="800" fill="#157A8C">2</text><circle cx="114.1" cy="279.0" r="45" fill="#fff"/><circle cx="114.1" cy="279.0" r="40" fill="#3FA66B"/><g transform="translate(97.9,262.8) scale(1.35)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></g><circle cx="142.9" cy="250.2" r="13" fill="#fff"/><text x="142.9" y="255.7" text-anchor="middle" font-size="16" font-weight="800" fill="#2C8452">3</text><circle cx="225" cy="215" r="58" fill="#fff"/><circle cx="225" cy="215" r="51" fill="#55308A"/><g transform="translate(211,171) scale(1.15)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-child"/></g><text x="225" y="212" text-anchor="middle" fill="#fff" font-size="9.6" font-weight="800">EVERY CHILD IN</text><text x="225" y="225" text-anchor="middle" fill="#FFC94D" font-size="9.6" font-weight="800">EFFIA-</text><text x="225" y="238" text-anchor="middle" fill="#FFC94D" font-size="9.6" font-weight="800">KWESIMINTSIM</text></svg><div class="facts"><div class="fact"><div class="n">3</div><div class="l">Super powers</div></div><div class="fact"><div class="n">12</div><div class="l">Play dates a year</div></div><div class="fact"><div class="n">1</div><div class="l">Big plan for our town</div></div><div class="fact"><div class="n">0</div><div class="l">Children left out</div></div></div><div class="card" style="background:var(--cream-2);margin:auto 0 0"><h3 style="font-size:9.6pt">The big idea</h3><p style="font-size:8.6pt">When families, chiefs, teachers and helpers work together as one big team, <b>every child in Effia-Kwesimintsim grows up happy, safe and ready to learn.</b></p></div><div class="panelnum">Inside 1</div></div><div class="panel spread"><div class="zone"><div class="zhead"><div class="znum" style="background:#EC5F8D;color:#fff">1</div><div class="zdisc" style="background:#C94170"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div><div class="zt"><h3>Happy Playtime &amp; Supportive Families</h3><span style="color:#C94170">Psychosocial well-being</span></div></div><p class="zlede">Lots of play, lots of friends — and happy, helpful homes!</p><ul class="acts"><li style="color:#C94170"><b>Monthly play dates —</b> fun, creative play sessions every month to make friends, play games and express themselves.</li><li style="color:#C94170"><b>Parent clubs —</b> monthly meetings and friendly classes where mums and dads share parenting ideas.</li></ul></div><div class="zone"><div class="zhead"><div class="znum" style="background:#1E9AB0;color:#fff">2</div><div class="zdisc" style="background:#157A8C"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div><div class="zt"><h3>Open Doors for Everyone</h3><span style="color:#157A8C">Disability inclusion</span></div></div><p class="zlede">Every door, every game and every classroom — open to every child!</p><ul class="acts"><li style="color:#157A8C"><b>Fixing play spaces &amp; schools —</b> smooth ramps, handrails and accessible toilets in our buildings.</li><li style="color:#157A8C"><b>Talking with community leaders —</b> chiefs, church and mosque leaders teach that every child is special, equal and loved.</li><li style="color:#157A8C"><b>Playing together —</b> children with special needs join right in with every game.</li></ul><div class="team"><span class="chip"><i style="background:#1E9AB0"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></i>Smooth ramps</span><span class="chip"><i style="background:#6B3FA0"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></i>Handrails</span><span class="chip"><i style="background:#E2574C"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></i>Accessible toilets</span></div></div><div class="panelnum">Inside 2</div></div><div class="panel last"><div class="zone"><div class="zhead"><div class="znum" style="background:#3FA66B;color:#fff">3</div><div class="zdisc" style="background:#2C8452"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div><div class="zt"><h3>Safe Shield &amp; Helper Teams</h3><span style="color:#2C8452">Child protection</span></div></div><p class="zlede">Grown-ups who keep watch — and help that comes right away!</p><ul class="acts"><li style="color:#2C8452"><b>Community safety talks —</b> at schools and neighbourhood centres: how to stay safe and where to get help.</li><li style="color:#2C8452"><b>Teacher &amp; volunteer training —</b> so grown-ups quickly spot when a child needs help.</li><li style="color:#2C8452"><b>Caring counselling —</b> gentle support to help children and families heal.</li><li style="color:#2C8452"><b>Quick helper emergency team —</b> an Emergency Fund, so medical, legal or safe&#8209;haven help comes fast. <i>Help right away!</i></li></ul></div><div class="cheer"><h3>You are part of Effia-Kwesimintsim's team!</h3><p>Every little superstar here is special, equal and loved — including you.</p></div><div class="bigidea"><p style="font-weight:700;color:#fff;margin-bottom:2mm">You can't build a better Effia-Kwesimintsim with one block.</p><p>Play dates are great — but not if some children can't get through the door. Ramps help — but not if a child isn't safe at home. When all three super powers work together, <b>every child grows up happy, safe and ready to learn.</b></p></div><div class="panelnum">Inside 3</div></div></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.DS_Store
+
+# Generated deliverables — all of these rebuild from the HTML sources,
+# so they are kept out of the repo rather than versioned as binaries.
+*.pdf
+*.pptx
+illustrator/
+illustrator-booklet/
